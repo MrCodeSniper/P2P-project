@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.example.mac.back.view.RoundImageView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scaleType="fitXY"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:src="@drawable/home_theme_one"
+    app:type="round"
+    app:radius="4dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" />
+
+

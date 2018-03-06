@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <!--  自定义view属性 -->
+    <declare-styleable name="CustomView">
+        <attr name="default_color" format="color"></attr>
+        <attr name="default_size" format="dimension"></attr>
+    </declare-styleable>
+
+
+    <!--  开启activity会创建application 和临时窗口view 渲染临时窗口view -->
+    <style name="splashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash5</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+
+    </style>
+
+    <style name="FirstTheme" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+
+    </style>
+
+    <style name="AppTheme.Main" parent="AppTheme" ></style>
+</resources>

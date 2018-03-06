@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">back</string>
+    <string name="action_settings">Settings</string>
+    <string name="about_us">关于我们</string>
+    <string name="action_center">活动中心</string>
+    <string name="help_center">帮助中心</string>
+    <string name="phrase_explain">名词解释</string>
+    <string name="media_info">媒体资讯</string>
+    <string name="login_soon">立即登录</string>
+</resources>

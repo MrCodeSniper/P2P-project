@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:layout_height="wrap_content">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#e5e5e5"
+        >
+    </View>
+    <LinearLayout
+        android:background="#f7f7f7"
+        android:layout_width="match_parent"
+        android:layout_height="35dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="新手专享"
+            android:textColor="#666666"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+
+
+            />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#e5e5e5"
+        >
+    </View>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/tv_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="新手乐园"
+            android:textColor="#000"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+
+            />
+
+        <TextView
+            android:layout_marginTop="25dp"
+            android:layout_below="@+id/tv_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="518元大礼包等你拿"
+            android:textSize="20sp"
+            android:textColor="#ff4242"
+            android:layout_marginLeft="20dp"
+
+            />
+
+        <TextView
+            android:layout_alignLeft="@id/iv_phone"
+            android:layout_above="@id/iv_phone"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="红包任你领"
+            android:textColor="#fff"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:background="@drawable/sign"
+            />
+
+
+        <ImageView
+            android:id="@+id/iv_phone"
+            android:layout_marginBottom="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/pic_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#e5e5e5"
+        >
+    </View>
+
+
+</LinearLayout>

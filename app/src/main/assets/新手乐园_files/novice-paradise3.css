@@ -1,0 +1,192 @@
+html {color: #000;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;font-size:100px;background-color:#d82e2d;}
+@media screen and (max-width:319px) {
+html{font-size:48px;}
+}
+@media screen and (min-width:320px) and (max-width:359px) {
+	html{font-size:50px;}
+}
+@media screen and (min-width:360px) and (max-width:374px) {
+	html{font-size:56.25px;}
+}
+@media screen and (min-width:375px) and (max-width:409px) {
+	html{font-size:58.59px;}
+}
+@media screen and (min-width:410px) and (max-width:479px) {
+	html{font-size:64px;}
+}
+@media screen and (min-width:480px) and (max-width:559px) {
+	html{font-size:76px;}
+}
+@media screen and (min-width:560px) and (max-width:639px) {
+	html{font-size:88px;}
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {margin: 0;padding: 0;}
+body{ font-family:Arial,"微软雅黑",sans-serif;color:#222; font-size:12px;}
+body, button, input, select, textarea {outline:none;}
+input, select, textarea {font-size: 100%;}
+table {border-collapse:collapse; border-spacing:0;}
+th {text-align: inherit;}
+fieldset, img {border: 0;}
+iframe {display: block;}
+abbr, acronym {border: 0;font-variant: normal;}
+del {text-decoration: line-through;}
+address, caption, cite, code, dfn, em, th, var {font-style: normal;font-weight: 500;}
+ol, ul {list-style: none;}
+caption, th {text-align: left;}
+h1, h2, h3, h4, h5, h6 {font-size: 100%;font-weight: 500;}
+a:hover {text-decoration:none;cursor:pointer;}
+ins, a {text-decoration: none;outline:none; color:#222;}
+i{font-style:normal;}
+button, input, select, textarea {margin: 0;font-size: 100%;vertical-align: middle;}
+.fl{ float:left;}.fr{ float:right;}
+img{width: 100%;display: block;}
+
+.main{max-width:640px;min-width: 295px; margin: 0 auto;position: relative;}
+.head{position: relative;}
+.head .notice{width:100%;height:0.38rem;line-height: 0.38rem;background:rgba(81,34,102,0.7);overflow: hidden;position:absolute;left:0;bottom:9%;color:#ffaf00;font-size: 0.2rem;text-align: center;white-space: nowrap;}
+.content{background:url(https://ss.zcmlc.com/appActivity/img/201705/novice-paradise2/bg_02.jpg) no-repeat;background-size: 100% 100%;overflow: hidden;}
+.content a.button{width: 77.34375%;height: 0.67rem;line-height: 0.67rem;color: #fff;font-size: 0.27rem;text-align: center; display: block; -o-border-radius: 0.05rem;-moz-border-radius: 0.05rem;-webkit-border-radius: 0.05rem;border-radius: 0.05rem;background-color: #dd3533;margin:0 auto; -o-box-shadow: 0.03rem 0.04rem 0.05rem rgba(221,53,52,.24), inset 0.04rem -0.05rem 0.24rem rgba(234,48,79,0.75); -moz-box-shadow: 0.03rem 0.04rem 0.05rem rgba(221,53,52,.24), inset 0.04rem -0.05rem 0.24rem rgba(234,48,79,0.75); -webkit-box-shadow: 0.03rem 0.04rem 0.05rem rgba(221,53,52,.24), inset 0.04rem -0.05rem 0.24rem rgba(234,48,79,0.75); box-shadow: 0.03rem 0.04rem 0.05rem rgba(221,53,52,.24), inset 0.04rem -0.05rem 0.24rem rgba(234,48,79,0.75); }
+.tips{font-size: 0.21rem;text-align: center;line-height: 0.55rem;color: #ff7155;margin-top: 0.28rem;overflow: hidden;}
+.tips span{color: #b81a20;}
+.cont1 .title{width:47.03125%;background: url(https://ss.zcmlc.com/appActivity/img/201705/novice-paradise2/bg_05.png) no-repeat;background-size: 100% 100%;margin:0.15rem auto 0.4rem;color: #dd3534;text-align: center;font-size: 0.29rem;font-weight: bold;height: 0.41rem;line-height: 0.3rem;}
+.cont1 a.org{color: #ffd4ac;}
+.cont1 .gift{text-align: center; overflow: hidden;margin-bottom: 0.25rem;}
+.cont1 .gift .left{width:25.625%;height:1.20rem;float: left;background: url(https://ss.zcmlc.com/appActivity/img/201705/novice-paradise2/icon_08.png) no-repeat;background-size: 100% 100%;font-size: 0.4rem;font-weight: bold; color: #d82e2d;margin-left: 15.625%;box-sizing: border-box;padding-top: 0.16rem;}
+.cont1 .gift .left span{font-size: 0.24rem;}
+.cont1 .gift .mid{width: 7.8125%;height: 0.5rem; float: left;background-color: #dc3332;margin: 0.38rem 0.28rem 0;border-radius:0.26rem;line-height: 0.5rem;font-size: 0.34rem;font-weight: bold;color: #ffeedb;}
+.cont1 .gift .right{width:24.53125%;height:0.94rem; float: left;background: url(https://ss.zcmlc.com/appActivity/img/201705/novice-paradise2/icon_09.png) no-repeat;background-size: 100% 100%;font-size: 0.47rem;font-weight: bold; color: #ffeedb;margin-top: 0.14rem;box-sizing: border-box;padding: 0.18rem 0.36rem 0 0;}
+.cont1 .gift .right span{font-size: 0.32rem;}
+.cont1 .show{display: none;}
+.cont1 .show h4{width: 80.3125%;font-size: 0.21rem;color: #8c0302;margin: 0.30rem auto 0;line-height: 0.32rem;}
+.cont1 .show h4 span{color: #dd3534;}
+.cont1 .show li{width: 77.96875%;height: 1.19rem;margin: 0.15rem auto 0;background: url(https://ss.zcmlc.com/appActivity/img/201705/novice-paradise2/showAll.png) no-repeat;background-size: 100% 100%;color: #fff;box-sizing: border-box;overflow: hidden;}
+.cont1 .show li:first-child{background-image: url(https://ss.zcmlc.com/appActivity/img/201705/novice-paradise2/showFirst.png);margin-top: 0.25rem;}
+.cont1 .show li .left{float: left;width: 30%;text-align: center;margin-top: 0.22rem;}
+.cont1 .show li .left h3{font-size: 0.32rem;line-height: 0.45rem;}
+.cont1 .show li .left h3 span{font-size: 0.57rem;font-weight: bold;}
+.cont1 .show li .left h5{font-size: 0.19rem;color: #b01717;}
+.cont1 .show li:first-child .left h5{font-size: 0.19rem;color: #560f6d;}
+.cont1 .show li .right{float: left;width: 70%;padding-left: 0.18rem;font-size: 0.23rem;box-sizing: border-box;margin-top: 0.45rem;}
+.cont1 .show a#mycard{width: 40%;height: 0.48rem;line-height: 0.48rem;display: block;color: #d92f2f;border: 0.03rem solid #d92f2f;border-radius: 0.25rem;font-size: 0.27rem;text-align: center;margin: 0 auto;margin-top: 0.2rem;display: none;}
+.cont1 .show p{width: 80.9375%; color: #ee741f;border: 1px solid #ffd9c3;-o-box-shadow: inset 0 0 0.18rem #ffd9c3;-moz-box-shadow: inset 0 0 0.18rem #ffd9c3;-webkit-box-shadow: inset 0 0 0.18rem #ffd9c3;box-shadow: inset 0 0 0.18rem #ffd9c3;margin: 0 auto;padding:0.2rem 0.12rem;box-sizing: border-box;line-height: 0.3rem;font-size: 0.2rem;margin-top: 0.3rem;}
+.cont1 .show p span{color: #a72b59;}
+.cont1 .tips1{height: 1.66rem;background:url(https://ss.zcmlc.com/appActivity/img/201705/novice-paradise2/bg_03.jpg) no-repeat;background-size: 100% 100%;position: relative;}
+.cont1 .tips1 p{/*border:0.03rem solid #ff6c00;*/ font-weight: bold;width: 55%;margin:0 auto;height: 0.34rem;line-height: 0.34rem;margin-top: 0.09rem;/*animation: tipsBorder 1.5s linear infinite;-moz-animation: tipsBorder 1.5s linear infinite; -webkit-animation: tipsBorder 1.5s linear infinite; -o-animation: tipsBorder 1.5s linear infinite;*/}
+.cont1 .tips1 p.kuang{border: 0.03rem solid #f56926;}
+.cont1 .tips1 img.hand{width: 15.47%;display: block;position: absolute;top: 0.3rem;right: 0.3rem;animation: handMove 0.8s ease-in-out infinite alternate;}
+.cont2 .title{width:51.25%;background: url(https://ss.zcmlc.com/appActivity/img/201705/novice-paradise2/bg_06.png) no-repeat;background-size: 100% 100%;margin:0.2rem auto 0.3rem;color: #d44202;text-align: center;font-size: 0.29rem;font-weight: bold;height: 0.41rem;line-height: 0.3rem;}
+.cont2 .invest{overflow: hidden;margin-bottom: 0.28rem;}
+.cont2 .invest div.vip{text-align: center;padding-bottom: 0.2rem;}
+.cont2 .invest .vip h4{height: 0.75rem;width: 29%;font-size: 0.2rem;color: #de7753;text-align: center;display: inline-block;}
+.cont2 .invest .vip h4 span{font-size: 0.4rem;font-weight: bold;line-height: 0.44rem;}
+.cont2 .invest .vip h4.right{color: #d82e2d;}
+.cont2 .invest .vip a.button{width: 77.5%;height: 0.54rem;line-height: 0.54rem;font-size: 0.27rem; display: inline-block;margin-top: 0.24rem;}
+.cont2 .invest .vip a.button.over{width: 77.5%;height: 0.54rem;line-height: 0.54rem;font-size: 0.27rem; display: inline-block;margin-top: 0.24rem; background-color: #b6b6b6; box-shadow: 0.03rem 0.04rem 0.05rem rgba(176,176,176,.24), inset 0.04rem -0.05rem 0.24rem rgba(159,159,159,.75);
+}
+.cont2 .tips2{height:0.7rem;background:url(https://ss.zcmlc.com/appActivity/img/201705/novice-paradise2/bg_04-1.jpg) no-repeat;background-size: 100% 100%;    line-height: 0.28rem;box-sizing: border-box;padding: 0.1rem 0.66rem;text-align: left;}
+.cont3 .title{width:54.21875%;background: url(https://ss.zcmlc.com/appActivity/img/201705/novice-paradise2/bg_07.png) no-repeat;background-size: 100% 100%;margin:0.46rem auto 0.26rem;color: #fff;text-align: center;font-size: 0.29rem;font-weight: bold;height: 0.4rem;line-height: 0.3rem;}
+.cont3 .invite{width: 88.4375%; height: 1.34rem;-o-border-radius: 0.1rem; -moz-border-radius: 0.1rem; -webkit-border-radius: 0.1rem; border-radius: 0.1rem; background-color: #ffcd00;margin:0 auto;font-size: 0.27rem;text-align: center;overflow: hidden;}
+.cont3 .invite div{width: 76.86%;float: left;}
+.cont3 .invite p.orange{color: #da7c00;margin-top: 0.26rem;}
+.cont3 .invite p.red{color: #c51212;margin-top: 0.12rem;}
+.cont3 .invite a{width: 1.2rem;height: 1.2rem; float: left;display: block;border-radius: 0.61rem;background: linear-gradient(#f24b5b, #ce0000 85%, #db4901);margin-top: 0.07rem;box-sizing: border-box;padding-top: 0.3rem;line-height: 0.3rem;color: #fff;}
+.cont4{overflow: hidden;}
+.cont4 .title{font-size: 0.27rem;color: #ffc22e;text-align: center;margin-top: 0.38rem;}
+/*弹框*/
+.dialog_popup .mask{width:100%;height:100%;position:fixed;left:0;top:0;z-index:100;background-color:#000;opacity:0.5;filter:alpha(opacity=50);}
+.dialog_popup .box{width:80%;background-color:#fff;border-radius:10px;margin-top:10px;position:fixed;left:10%;top:120px;z-index:105;padding:15px 0; font-family:'微软雅黑';}
+.dialog_popup span{position:absolute;top:5px;right:5px;width:26px;height:26px;font-size:30px;line-height:26px;text-align:center;color:#fff;border-radius:15px;z-index:1;cursor:pointer; font-family:arial;color:#999;}
+.dialog_popup .title{padding:5px 0;color:#000;font-size:18px;text-align:center;position:relative;}
+.dialog_popup .cont{color:#555;text-align:center;padding-top:10px;padding-bottom:20px;padding-left:10px;padding-right:10px;position:relative; font-size:14px; line-height:22px;}
+.dialog_popup .btnBox{text-align:center;position:relative; font-size:0;}
+.dialog_popup .okBtn,.dialog_popup .cancelBtn{background-color:#fa3432;text-align:center;color:#fff;padding:8px 0;display:inline-block;border-radius:6px;margin:0 5px; font-size:14px; min-width:30%;}
+.dialog_popup .cancelBtn{background-color:#a7a7a7;}
+/*悬浮窗*/
+.float{position: fixed;top: 2.7rem; width: 100%;max-width:640px;min-width: 310px;margin: 0 auto; }
+.float .btn_flt{position: absolute; right: 0;width: 6.25%;border-radius: 0.2rem 0 0 0.2rem; background-color:#ffb000;font-size: 0.24rem;color: #bb1d92;text-align: center;padding: 0.15rem 0.05rem;line-height: 0.29rem;font-weight: bold;box-shadow: 0 -0.05rem 0 #fa8200;-webkit-box-shadow: 0 -0.05rem 0 #fa8200;-o-box-shadow: 0 -0.05rem 0 #fa8200;-moz-box-shadow: 0 -0.05rem 0 #fa8200;}
+/*自定义弹框*/
+.msg{width: 100%;height: 100%; position: fixed; top: 0;display: none;z-index: 20;}
+.msg_bg{width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 80; background-color: #000; opacity: 0.5;}
+.msg_content{width: 100%;height: 100%; max-width: 640px; position: relative; top: 0; margin: auto;z-index: 100;}
+.msg_content_box{width: 91.6%;position: absolute;left: 50%;top:10%;margin:0 0 0 -45.8%;color: #de2a16;z-index: 100;box-sizing: border-box;;overflow: hidden;border-radius: 0.15rem;background-color: #ffcc21;box-shadow: inset 0 0 0.4rem rgba(255,255,255,0.8);}
+.msg_content_box .msgbox_close{position:absolute;top:0.2rem;right:0.2rem;width:0.35rem;height:0.35rem;font-size:0.60rem;line-height:0.4rem;text-align:center;z-index:1;cursor:pointer; font-family:arial;}
+.msg_content_box .msgbox_title{margin:0.3rem auto 0;font-size: 0.32rem;font-weight: bold;text-align: center;}
+.msg_content_box ul{width: 92.1875%;margin: 0 auto 0.25rem;}
+.msg_content_box li{overflow: hidden;line-height: 0.40rem;text-align: left;font-size: 0.20rem;}
+.msg_content_box li div:nth-child(odd){float:left;width: 7%;text-align: right;margin-left: 0.08rem;}
+.msg_content_box li div:nth-child(even){float:left;width: 90%;margin-left: 0.02rem;}
+.msg_content_box .PhoneNumber{width: 64.84%;height: 2.15rem;border:0.02rem solid #de2a16;box-sizing: border-box;margin: 0.30rem auto 0.35rem;border-radius: 0.20rem;text-align: center;overflow: hidden;line-height: 0.35rem;font-size: 0.22rem;color: #de2a16;}
+.msg_content_box .PhoneNumber div{background-color: #de2a16;box-sizing: border-box;margin-bottom: 0.15rem;}
+.msg_content_box .PhoneNumber div img{width: 1.39rem;height: 0.28rem;vertical-align: -0.05rem;margin: 0 auto;padding: 0.05rem;}
+.msg0 p{width: 4.84rem;height:0.74rem;box-sizing:border-box;border-radius: 0.04rem;background: rgba(0,0,0,0.71);line-height: 0.74rem;font-size: 0.24rem;color: #fff;text-align: center;position:relative;top:50%;margin:-0.37rem auto 0;}
+
+/*箭头*/
+.arrow{animation: arrowAni 0.8s linear infinite; -webkit-animation: arrowAni 0.8s linear infinite; -moz-animation: arrowAni 0.8s linear infinite; -o-animation: arrowAni 0.8s linear infinite;height: 0.17rem;display: inline-block;}
+.arrow1{background: url(https://ss.zcmlc.com/appActivity/img/201705/novice-paradise2/arrow1.png) no-repeat;background-size: 100% 100%;width: 4.55%;}
+.arrow2{background: url(https://ss.zcmlc.com/appActivity/img/201705/novice-paradise2/arrow2.png) no-repeat;background-size: 100% 100%;width: 2.5%;}
+.arrow3{background: url(https://ss.zcmlc.com/appActivity/img/201705/novice-paradise2/arrow3.png) no-repeat;background-size: 100% 100%;width: 3.28125%;height: 0.29rem;margin: 0.15rem auto 0.2rem;display: block;}
+@keyframes arrowAni{
+   0%{transform:translateY(0);}
+   25%{transform:translateY(-0.05rem);}
+   50%{transform:translateY(0);}
+   75%{transform:translateY(0.05rem);}
+   100%{transform:translateY(0);}
+}
+@-moz-keyframes arrowAni{
+   0%{-moz-transform:translateY(0);}
+   25%{-moz-transform:translateY(-0.05rem);}
+   50%{-moz-transform:translateY(0);}
+   75%{-moz-transform:translateY(0.05rem);}
+   100%{-moz-transform:translateY(0);}
+}
+@-webkit-keyframes arrowAni{
+   0%{-webkit-transform:translateY(0);}
+   25%{-webkit-transform:translateY(-0.05rem);}
+   50%{-webkit-transform:translateY(0);}
+   75%{-webkit-transform:translateY(0.05rem);}
+   100%{-webkit-transform:translateY(0);}
+}
+@-o-keyframes arrowAni{
+   0%{-o-transform:translateY(0);}
+   25%{-o-transform:translateY(-0.05rem);}
+   50%{-o-transform:translateY(0);}
+   75%{-o-transform:translateY(0.05rem);}
+   100%{-o-transform:translateY(0);}
+}
+@keyframes tipsBorder{
+   0%{border-color: #ff6c00}
+   50%{border-color: #fcdfce}
+   100%{border-color: #ff6c00}
+}
+@-moz-keyframes tipsBorder{
+   0%{border-color: #ff6c00}
+   50%{border-color: #fcdfce}
+   100%{border-color: #ff6c00}
+}
+@-webkit-keyframes tipsBorder{
+   0%{border-color: #ff6c00}
+   50%{border-color: #fcdfce}
+   100%{border-color: #ff6c00}
+}
+@-o-keyframes tipsBorder{
+   0%{border-color: #ff6c00}
+   50%{border-color: #fcdfce}
+   100%{border-color: #ff6c00}
+}
+
+@keyframes handMove{
+   0%{transform:translate(0);}
+   100%{transform:translate(-0.4rem,-0.15rem);}
+}
+@-moz-keyframes handMove{
+   0%{-moz-transform:translate(0);}
+   100%{-moz-transform:translate(-0.4rem,-0.15rem);}
+}
+@-webkit-keyframes handMove{
+   0%{-webkit-transform:translate(0);}
+   100%{-webkit-transform:translate(-0.4rem,-0.15rem);}
+}
+@-o-keyframes handMove{
+   0%{-o-transform:translate(0);}
+   100%{-o-transform:translate(-0.4rem,-0.15rem);}
+}

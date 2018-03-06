@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:clipChildren="false"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+         /><!--装4个Fragment-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#e5e5e5"
+        />
+
+    <RelativeLayout
+        android:clipChildren="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <!--定义FragmentTabHost控件-->
+    <android.support.v4.app.FragmentTabHost
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:background="#fff"
+        android:id="@android:id/tabhost"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+         ><!--装4个Fragment-->
+
+        <FrameLayout
+            android:clipChildren="false"
+            android:layout_alignParentBottom="true"
+            android:id="@android:id/tabcontent"
+            android:layout_gravity="bottom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+             /><!--装Tab的内容-->
+    </android.support.v4.app.FragmentTabHost>
+
+    <ImageView
+        android:layout_marginTop="-9dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/circle_pre"
+        android:id="@+id/main_image_center"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+         />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
