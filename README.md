@@ -1,5 +1,5 @@
 
-![](https://raw.github.com/meolu/walle-web/master/docs/logo.jpg)
+![](https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2524887731,4046843904&fm=58&s=30946833F2E44CA22F419CDA0000A022&bpow=121&bpoh=75)
 
 XX猫-金融类app
 =========================
@@ -56,26 +56,25 @@ Skills
 Screenshots
 -----------
 
-#### project config
-![](https://raw.github.com/meolu/docs/master/walle-web.io/docs/en/static/walle-config-edit-en.jpg)
+#### homepage
+![](https://upload-images.jianshu.io/upload_images/2634235-9180aef028a26c7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/588)
 
-#### sumbit a task
-![](https://raw.github.com/meolu/docs/master/walle-web.io/docs/en/static/walle-submit-en.jpg)
+#### productpage
+![](https://upload-images.jianshu.io/upload_images/2634235-d9482b0127767197.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/588)
 
-#### list of task
-![](https://raw.github.com/meolu/docs/master/walle-web.io/docs/en/static/walle-dev-list-en.jpg)
+#### morepage
+![](https://upload-images.jianshu.io/upload_images/2634235-fe35dabb031abac4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/588)
 
-#### demo show
-![](https://raw.github.com/meolu/docs/master/walle-web.io/docs/en/static/walle-en.gif)
+#### actionpage
+![](https://upload-images.jianshu.io/upload_images/2634235-d2a51a0aca5399dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/588)
 
 ## CHANGELOG
 
--v1.0
-  day1.android:
+###v1.0
+day1.android:
 - 首页模块 新手乐园+安全保障嵌入html并两端互调 实现hybird混合开发
 - 个人模块 实现登陆注册机制 发送短信和验证短信功能
-
-  day1.javaserver:
+day1.javaserver:
 - html中添加调用android代码 并正常访问html活动页判断用户是否在安卓端登陆
 - loginserverlet  登陆接口正常使用
 - registerservlet 注册接口正常使用
