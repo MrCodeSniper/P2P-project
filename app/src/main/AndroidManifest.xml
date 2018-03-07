@@ -43,6 +43,11 @@
         <activity android:name=".activity.LoginActivity"></activity>
         <activity android:name=".activity.RegisterActivity"></activity>
         <activity android:name=".activity.WebViewActivity"></activity>
+        <activity android:name=".activity.BrowserActivity">
+
+
+
+        </activity>
 
     </application>
 

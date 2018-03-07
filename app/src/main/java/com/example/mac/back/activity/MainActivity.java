@@ -39,7 +39,13 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     private List<Fragment> list = new ArrayList<Fragment>();
     private ViewPager vp;
 
+    public static final int MODE_DEFAULT = 0;
 
+    public static final int MODE_SONIC = 1;
+
+    public static final int MODE_SONIC_WITH_OFFLINE_CACHE = 2;
+
+    private static final int PERMISSION_REQUEST_CODE_STORAGE = 1;
 
 
     @Override

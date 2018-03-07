@@ -4,6 +4,7 @@ package com.example.mac.back.fragment;
  * Created by mac on 2018/2/28.
  */
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,6 +24,7 @@ import com.example.mac.back.R;
 import com.example.mac.back.activity.LoginActivity;
 import com.example.mac.back.activity.WebViewActivity;
 import com.example.mac.back.adapter.RecyclingPagerAdapter;
+import com.example.mac.back.config.AppConfig;
 import com.example.mac.back.utils.IntentUtils;
 import com.example.mac.back.view.AutoVerticalScrollTextView;
 import com.example.mac.back.view.ClipViewPager;
@@ -71,9 +73,22 @@ public class Fragment_home extends Fragment {
         ll_user_parden.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                IntentUtils.showIntent(getActivity(), WebViewActivity.class);
+                String[] key={"url","title"};
+                String[] values={AppConfig.PARDEN,"新手乐园"};
+                IntentUtils.showIntent(getActivity(), WebViewActivity.class,key,values);
             }
         });
+        LinearLayout ll_safe=view.findViewById(R.id.ll_safe_proguard);
+        ll_safe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String[] key={"url","title"};
+                String[] values={AppConfig.SAFE,"安全保障"};
+                IntentUtils.showIntent(getActivity(), WebViewActivity.class,key,values);
+            }
+        });
+
+
         Button btn_register=view.findViewById(R.id.btn_register);
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +109,7 @@ public class Fragment_home extends Fragment {
 
         mPagerAdapter = new TubatuAdapter(getActivity());
         mViewPager.setAdapter(mPagerAdapter);
+
         initData();
         return view;
     }
@@ -116,9 +132,9 @@ public class Fragment_home extends Fragment {
     public static class TubatuAdapter extends RecyclingPagerAdapter {
         private LayoutInflater inflater;
         private final List<Integer> mList;
-        private final Context mContext;
+        private final Activity mContext;
 
-        public TubatuAdapter(Context context) {
+        public TubatuAdapter(Activity context) {
             mList = new ArrayList<>();
             mContext = context;
             this.inflater=LayoutInflater.from(context);
@@ -130,7 +146,7 @@ public class Fragment_home extends Fragment {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup container) {
+        public View getView(final int position, View convertView, ViewGroup container) {
             RoundImageView imageView = null;
             if (convertView == null) {
 //                imageView = new ImageView(mContext);overScrollMode
@@ -140,6 +156,29 @@ public class Fragment_home extends Fragment {
             }
             imageView.setTag(position);
             imageView.setImageResource(mList.get(position));
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                  switch (position){
+                      case 0:
+
+                          break;
+                      case 1:
+
+                          break;
+                      case 2:
+                          String[] key1={"url","title"};
+                          String[] values1={AppConfig.SAFE,"安全保障"};
+                          IntentUtils.showIntent(mContext, WebViewActivity.class,key1,values1);
+                          break;
+                      case 3:
+                          String[] key2={"url","title"};
+                          String[] values2={AppConfig.PARDEN,"新手乐园"};
+                          IntentUtils.showIntent(mContext, WebViewActivity.class,key2,values2);
+                          break;
+                  }
+                }
+            });
             return imageView;
         }
 

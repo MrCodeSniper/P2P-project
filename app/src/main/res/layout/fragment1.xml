@@ -162,6 +162,7 @@
 
 
         <LinearLayout
+            android:id="@+id/ll_safe_proguard"
             android:orientation="vertical"
             android:layout_weight="1"
             android:layout_height="60dp"

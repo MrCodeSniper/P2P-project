@@ -19,8 +19,10 @@ import android.widget.Toast;
 
 import com.dinuscxj.progressbar.CircleProgressBar;
 import com.example.mac.back.R;
+import com.example.mac.back.activity.WebViewActivity;
 import com.example.mac.back.bean.Product;
 import com.example.mac.back.config.AppConfig;
+import com.example.mac.back.utils.IntentUtils;
 import com.example.mac.back.viewholder.MyTypeHolder1;
 import com.example.mac.back.viewholder.MyTypeHolder2;
 import com.itheima.retrofitutils.ItheimaHttp;
@@ -29,6 +31,7 @@ import com.itheima.retrofitutils.listener.HttpResponseListener;
 import com.orhanobut.logger.Logger;
 
 import org.itheima.recycler.adapter.BaseRecyclerAdapter;
+import org.itheima.recycler.listener.ItemClickSupport;
 import org.itheima.recycler.viewholder.BaseRecyclerViewHolder;
 import org.itheima.recycler.widget.ItheimaRecyclerView;
 
@@ -70,7 +73,36 @@ public class Fragment_product extends Fragment {
         View view = inflater.inflate(R.layout.fragment_product, null);
         unbinder = ButterKnife.bind(this, view);
         initData();
+        initListener();
         return view;
+    }
+
+    private void initListener() {
+
+        ItemClickSupport itemClickSupport = new ItemClickSupport(recyclerView);
+//点击事件
+        itemClickSupport.setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+
+                if(position==0){
+                    String[] key={"url","title"};
+                    String[] values={AppConfig.PARDEN,"新手乐园"};
+                    IntentUtils.showIntent(getActivity(), WebViewActivity.class,key,values);
+                }
+
+                Toast.makeText(recyclerView.getContext(), "我被点击了"+position, Toast.LENGTH_SHORT).show();
+            }
+        });
+//长按事件
+//        itemClickSupport.setOnItemLongClickListener(new ItemClickSupport.OnItemLongClickListener() {
+//            @Override
+//            public boolean onItemLongClicked(RecyclerView recyclerView, int position, View v) {
+//                Toast.makeText(recyclerView.getContext(), "我被长按了", Toast.LENGTH_SHORT).show();
+//                return false;
+//            }
+//        });
+
     }
 
     private void initAdapterAndListener() {

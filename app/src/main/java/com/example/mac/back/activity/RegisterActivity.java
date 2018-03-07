@@ -15,8 +15,11 @@ import android.widget.Toast;
 import com.example.mac.back.R;
 import com.example.mac.back.base.BaseActivity;
 import com.example.mac.back.bean.BaseBean;
+import com.example.mac.back.bean.User;
 import com.example.mac.back.config.AppConfig;
 import com.example.mac.back.utils.IntentUtils;
+import com.example.mac.back.utils.Md5Utils;
+import com.example.mac.back.utils.ToastUtils;
 import com.itheima.retrofitutils.ItheimaHttp;
 import com.itheima.retrofitutils.Request;
 import com.itheima.retrofitutils.listener.HttpResponseListener;
@@ -118,6 +121,42 @@ public class RegisterActivity extends BaseActivity {
         }
     }
 
+    @OnClick(R.id.btn_register_finish)
+    public void btn_register(){
+        //短信验证
+
+        //注册
+        //1。加密
+
+        String psd=etPsd.getText().toString();
+        String process_psd= Md5Utils.HEXAndMd5(psd);
+        Logger.e("zhuce"+process_psd);
+
+        Request request = ItheimaHttp.newPostRequest(AppConfig.REGISTER);//apiUrl格式："xxx/xxxxx"
+        request.putParams("phone",phone);
+        request.putParams("psd",process_psd);
+        Call call = ItheimaHttp.send(request, new HttpResponseListener<User>() {
+            @Override
+            public void onResponse(User baseBean, Headers headers) {
+                    Logger.e(baseBean.isSuccess()+"xxx");
+                    if(baseBean.isSuccess()){
+                        //注册成功
+                        ToastUtils.getInstanc(RegisterActivity.this).showToast("注册成功,欢迎登陆"+baseBean.getData().getName());
+                    }else {
+                        ToastUtils.getInstanc(RegisterActivity.this).showToast("注册失败"+baseBean.getMsg());
+                    }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable e) {
+                ToastUtils.getInstanc(RegisterActivity.this).showToast("注册失败，原因"+e.getMessage());
+                Logger.e(e.getMessage());
+            }
+        });
+
+
+
+    }
 
 
     @OnClick({R.id.et_yzm})   //给 button1 设置一个点击事件
@@ -142,15 +181,15 @@ public class RegisterActivity extends BaseActivity {
                 TimeCount time=new TimeCount(60000,1000);//参数依次为总时长，计时时间间隔
                 time.start();
                 if(baseBean.isSuccess()){
-                    Toast.makeText(RegisterActivity.this,"获取短信成功",Toast.LENGTH_SHORT);
+                    ToastUtils.getInstanc(RegisterActivity.this).showToast("获取短信成功");
                 }else{
-                    Toast.makeText(RegisterActivity.this,"获取短信失败",Toast.LENGTH_SHORT);
+                    ToastUtils.getInstanc(RegisterActivity.this).showToast("获取短信失败");
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable e) {
-                Toast.makeText(RegisterActivity.this,"获取短信失败",Toast.LENGTH_SHORT);
+                ToastUtils.getInstanc(RegisterActivity.this).showToast("获取短信失败"+e.getMessage());
             }
         });
     }
