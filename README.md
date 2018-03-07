@@ -1,18 +1,3 @@
-# 金融类app
-更新进度（附java服务器进度）
-day1.
-android:
-首页模块 新手乐园+安全保障嵌入html并两端互调 实现hybird混合开发
-个人模块 实现登陆注册机制 发送短信和验证短信功能
-
-
-
-javaserver:
-html中添加调用android代码 并正常访问html活动页判断用户是否在安卓端登陆
-loginserverlet  登陆接口正常使用
-registerservlet 注册接口正常使用
-sendSmsServlet smsVerifyServlet 短信验证码发送和验证接口 集成短信平台sdk
-
 
 ![](https://raw.github.com/meolu/walle-web/master/docs/logo.jpg)
 
@@ -54,11 +39,6 @@ Requirements
 
 That's all. It's base package of java environment!
 
-
-
-    ```
-
-
 To Do List
 ----------
 
@@ -71,12 +51,6 @@ To Do List
 - Support Docker
 - Open api
 - Command line
-
-Update
------------------
-```
-./yii walle/upgrade    # upgrade walle
-```
 
 
 Architecture
@@ -103,14 +77,24 @@ Screenshots
 ![](https://raw.github.com/meolu/docs/master/walle-web.io/docs/en/static/walle-en.gif)
 
 ## CHANGELOG
-[CHANGELOG](https://github.com/meolu/walle-web/releases)
+day1.android:
+- 首页模块 新手乐园+安全保障嵌入html并两端互调 实现hybird混合开发
+- 个人模块 实现登陆注册机制 发送短信和验证短信功能
+
+
+day1.javaserver:
+- html中添加调用android代码 并正常访问html活动页判断用户是否在安卓端登陆
+- loginserverlet  登陆接口正常使用
+- registerservlet 注册接口正常使用
+- sendSmsServlet smsVerifyServlet 短信验证码发送和验证接口 集成短信平台sdk
+
 
 
 Discussing
 ----------
-- [submit issue](https://github.com/meolu/walle-web/issues/new)
-- email: wushuiyong@huamanshu.com
+- [submit issue](https://github.com/MrCodeSniper/)
+- email: 15168264355@163.com
 
 勾搭下
 --------
-<img src="https://raw.githubusercontent.com/meolu/walle-web/feature-weixin/docs/weixin.wushuiyong.jpg" width="244" height="314" alt="吴水永微信" align=left />
+<img src="https://raw.githubusercontent.com/meolu/walle-web/feature-weixin/docs/weixin.wushuiyong.jpg" width="244" height="314" alt="我的微信" align=left />
