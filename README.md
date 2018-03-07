@@ -16,18 +16,17 @@ sendSmsServlet smsVerifyServlet 短信验证码发送和验证接口 集成短�
 
 ![](https://raw.github.com/meolu/walle-web/master/docs/logo.jpg)
 
-Walle - A Deployment Tool
+XX猫-金融类app
 =========================
 [![Build Status](https://travis-ci.org/meolu/walle-web.svg?branch=master)](https://travis-ci.org/meolu/walle-web)
 [![Packagist](https://img.shields.io/packagist/v/meolu/walle-web.svg)](https://packagist.org/packages/meolu/walle-web)
 [![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
 
-A web deployment tool, Easy for configuration, Fully functional, Smooth interface, Out of the box.
-support git/svn Version control system, no matter what language you are, php/java/ruby/python, just as jenkins. you can deploy the code or output to multiple servers easily by walle.
+2018 first app Thanks for your review.
 
-[Home Page](https://www.walle-web.io) | [官方主页](https://www.walle-web.io) | [中文说明](https://github.com/meolu/walle-web/blob/master/docs/README-zh.md) | [文档手册](https://www.walle-web.io/docs/).
+[Home Page](https://github.com/MrCodeSniper/) | [官方主页](https://github.com/MrCodeSniper/) | [中文说明](https://github.com/MrCodeSniper/) | [文档手册](https://github.com/MrCodeSniper/).
 
-Now, there are more than hundreds of companies hosted walle for deployment, star walle if you like : )
+Now, there are more than hundreds of companies hosted xxcat for deployment, star it if you like : )
 
 * Support git/svn Version control system.
 * User signup by admin/develop identity.
@@ -48,78 +47,15 @@ Now, there are more than hundreds of companies hosted walle for deployment, star
 Requirements
 ------------
 
-* Bash(git、ssh)
-* LNMP/LAMP(php5.4+)
-* Composer
-* Ansible(Optional)
+* androidstudio
+* eclipse for javaee
+* Mysql sqyog
+* genymotion
 
-That's all. It's base package of PHP environment!
-
-
-Installation
-------------
-```
-git clone git@github.com:meolu/walle-web.git
-cd walle-web
-vi config/local.php # set up module db mysql connection info
-composer install  # error cause by bower-asset, install：composer global require "fxp/composer-asset-plugin:*"
-./yii walle/setup # init walle
-```
-Or [The Most Detailed Installation Guide](https://github.com/meolu/walle-web/blob/master/docs/install-en.md), any questions refer to [FAQ](https://github.com/meolu/walle-web/blob/master/docs/faq-en.md)
-
-Quick Start
--------------
-
-* Signup a admin user(`admin/admin` exists), then configure a project, add member to the project, detect it.
-    * [git demo](https://github.com/meolu/walle-web/blob/master/docs/config-git-en.md)
-    * [svn demo](https://github.com/meolu/walle-web/blob/master/docs/config-svn-en.md)
-* Signup a develop user(`demo/demo` exists), submit a deployment.
-* Project admin audit the deployment.
-* Developer deploy the deployment.
+That's all. It's base package of java environment!
 
 
-Custom
---------
-you would like to adjust some params to make walle suited for your company.
 
-* Set suffix of email while signing in
-    ```php
-    vi config/params.php
-
-    'mail-suffix'   => [  // specify the suffix of email, multiple suffixes are allow.
-        'huamanshu.com',  // e.g: allow xyz@huamanshu.com only
-    ]
-    ```
-
-* Configure email smtp
-    ```php
-    vi config/local.php
-
-    'transport' => [
-            'host'       => 'smtp.huamanshu.com',
-            'username'   => 'service@huamanshu.com',
-            'password'   => 'K84erUuxg1bHqrfD',
-            'port'       => 25,
-            'encryption' => 'tls',
-        ],
-        'messageConfig' => [
-            'charset' => 'UTF-8',
-            'from'    => ['service@huamanshu.com' => '花满树出品'], 
-        ],
-    ```
-
-* Configure the path for log
-    ```php
-    vi config/params.php
-
-    'log.dir'   => '/tmp/walle/',
-    ```
-
-* Configure language
-    ```php
-    vi config/local.php
-
-    'language'   => 'en',  // zh-CN => 中文,  en => English
     ```
 
 
