@@ -39,11 +39,11 @@ Requirements
 
 That's all. It's base package of java environment!
 
-To Do List
+Skills
 ----------
 
-- Travis CI integration
-- Mail events：specify kinds of events
+- http-Retrofit+okhttp
+- Frame-MVC
 - Gray released：specify servers
 - Websocket instead of poll
 - A manager of static source
@@ -52,14 +52,6 @@ To Do List
 - Open api
 - Command line
 
-
-Architecture
-------------
-#### git/svn, user, host, servers
-![](https://raw.github.com/meolu/docs/master/walle-web.io/docs/en/static/walle-flow-relation-en.png)
-
-#### deployment flow
-![](https://raw.github.com/meolu/docs/master/walle-web.io/docs/en/static/walle-flow-en.png)
 
 Screenshots
 -----------
@@ -77,11 +69,11 @@ Screenshots
 ![](https://raw.github.com/meolu/docs/master/walle-web.io/docs/en/static/walle-en.gif)
 
 ## CHANGELOG
+
+###v1.0
 day1.android:
 - 首页模块 新手乐园+安全保障嵌入html并两端互调 实现hybird混合开发
 - 个人模块 实现登陆注册机制 发送短信和验证短信功能
-
-
 day1.javaserver:
 - html中添加调用android代码 并正常访问html活动页判断用户是否在安卓端登陆
 - loginserverlet  登陆接口正常使用
