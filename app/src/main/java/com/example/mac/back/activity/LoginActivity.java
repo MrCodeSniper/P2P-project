@@ -102,7 +102,9 @@ public class LoginActivity extends BaseActivity {
                     public void onResponse(BaseBean baseBean, Headers headers) {
                         initNext();
                         if(baseBean.isSuccess()){
-
+                            String[] params={"phone"};
+                            String [] values={etPhone.getText().toString()};
+                            IntentUtils.showIntent(LoginActivity.this,PasswordinputActivity.class,params,values);
                         }else {
                             String[] params={"phone"};
                             String [] values={etPhone.getText().toString()};

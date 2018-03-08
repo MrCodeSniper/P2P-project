@@ -31,8 +31,10 @@ dependencies {
     compile 'com.github.clans:fab:1.6.4'
     compile 'com.tencent.sonic:sdk:3.0.0-beta'
     compile 'com.jakewharton:butterknife:8.4.0'
+    compile 'org.greenrobot:eventbus:3.1.1'
     compile 'com.dinuscxj:circleprogressbar:1.1.1'
     compile 'com.github.open-android:SystemBarTint:v1.0.0'
+    compile 'com.huxq17.handygridview:handygridview:1.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
 //    compile 'com.viewpagerindicator:library:2.4.1'
 

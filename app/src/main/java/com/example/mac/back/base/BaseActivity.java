@@ -18,7 +18,13 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.example.mac.back.R;
+import com.example.mac.back.event.MessageEvent;
 import com.itheima.systembartint.SystemBarTintManager;
+import com.orhanobut.logger.Logger;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.Stack;
 
@@ -47,7 +53,7 @@ public abstract class BaseActivity extends FragmentActivity {
         // 设置activity为无标题栏
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-
+        EventBus.getDefault().register(this);
 
         // 将activity推入栈中
         listActivity.push(this);
@@ -85,6 +91,11 @@ public abstract class BaseActivity extends FragmentActivity {
 //        win.setAttributes(winParams);
 //    }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(MessageEvent event) {
+        Logger.e("baseactivity");
+
+    }
 
     /** 初始化ui **/
     protected abstract void initUI();
@@ -130,6 +141,8 @@ public abstract class BaseActivity extends FragmentActivity {
         if (listActivity.contains(this)) {
             listActivity.remove(this);
         }
+
+        EventBus.getDefault().unregister(this);
 
     }
 

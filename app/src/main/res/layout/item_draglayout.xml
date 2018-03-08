@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_module"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="-10dp"
+        android:paddingBottom="10dp"
+        android:src="@drawable/diaamond"
+        android:layout_width="55dp"
+        android:layout_height="55dp" />
+
+    <TextView
+        android:id="@+id/tv_module"
+        android:layout_marginTop="-15dp"
+        android:textColor="#333"
+        android:text="我的特权"
+        android:textSize="13sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

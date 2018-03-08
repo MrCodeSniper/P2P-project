@@ -38,20 +38,15 @@
 
 
 
-    <View
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#e5e5e5"
-        >
-    </View>
 
     <ImageView
+        android:id="@+id/iv_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/catears_noline_loginout"/>
 
     <ImageView
+        android:visibility="gone"
         android:id="@+id/iv_nologin"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -60,4 +55,168 @@
         android:src="@drawable/myproperty_nologin"
 
         />
+
+    <RelativeLayout
+        android:gravity="center"
+        android:background="@color/maincolor"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:text="总资产(元)"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textSize="30sp"
+                />
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:text="昨日收益(元)"
+                android:textSize="10sp"
+                />
+
+            <TextView
+                android:textColor="#333"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textSize="20sp"
+                />
+
+
+
+        </LinearLayout>
+
+
+        <View android:layout_width="1px" android:layout_height="match_parent" android:background="@color/maincolor" />
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:text="账户余额(元)"
+                android:textSize="10sp"
+                />
+
+            <TextView
+                android:textColor="#333"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textSize="20sp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:background="@color/gainsboro"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"></View>
+
+
+
+    <com.huxq17.handygridview.HandyGridView
+        android:id="@+id/grid_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#999999"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:horizontalSpacing="1px"
+
+        android:numColumns="3"
+        android:scrollbars="vertical"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="1px" />
+
+
+
+    <View
+        android:background="#999"
+        android:layout_width="match_parent"
+        android:layout_height="1px"></View>
+
+    <RelativeLayout
+        android:background="#fff"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_marginTop="12dp"
+            android:id="@+id/icon_safe"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/keyboard_icon"
+            />
+
+
+        <TextView
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/icon_safe"
+            android:layout_toRightOf="@+id/icon_safe"
+            android:background="#fff"
+            android:text="招财猫理财全面接入XX银行存管系统"
+            android:textColor="#666"
+            android:textSize="10sp" />
+
+
+
+    </RelativeLayout>
+
+
 </LinearLayout>

@@ -138,7 +138,7 @@ public class RegisterActivity extends BaseActivity {
         Call call = ItheimaHttp.send(request, new HttpResponseListener<User>() {
             @Override
             public void onResponse(User baseBean, Headers headers) {
-                    Logger.e(baseBean.isSuccess()+"xxx");
+//                    Logger.e(baseBean.isSuccess()+"xxx");
                     if(baseBean.isSuccess()){
                         //注册成功
                         ToastUtils.getInstanc(RegisterActivity.this).showToast("注册成功,欢迎登陆"+baseBean.getData().getName());

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_title"></include>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#e5e5e5"
+        >
+    </View>
+
+    <TextView
+        android:background="#f7f7f7"
+        android:gravity="center_vertical"
+        android:text="        招财猫理财全面接入XX银行存管系统"
+        android:layout_width="match_parent"
+        android:layout_height="35dp" />
+
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:maxLength="11"
+            android:id="@+id/et_phone"
+            android:inputType="textPassword"
+            android:hint="请输入密码"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/iv_clear"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/earnings_details_help_dialog_close"
+            />
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:enabled="false"
+        android:id="@+id/btn_next"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textColor="#999"
+        android:background="@drawable/btn_next"
+        android:text="登录"
+        />
+
+
+    <ImageView
+        android:visibility="gone"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#777777"
+        android:id="@+id/animationIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/loading_anim"
+        />
+
+
+</LinearLayout>
