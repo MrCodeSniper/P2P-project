@@ -93,4 +93,4 @@ Discussing
 
 勾搭下
 --------
-<img src="https://raw.githubusercontent.com/meolu/walle-web/feature-weixin/docs/weixin.wushuiyong.jpg" width="244" height="314" alt="我的微信" align=left />
+<img src="http://upload-images.jianshu.io/upload_images/2634235-333dfbca6ecdd6ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="244" height="314" alt="我的微信" align=left />
