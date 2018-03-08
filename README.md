@@ -81,6 +81,9 @@ day1.javaserver:
 - registerservlet 注册接口正常使用
 - sendSmsServlet smsVerifyServlet 短信验证码发送和验证接口 集成短信平台sdk
 
+day2.android:
+-  完成注册登陆后用户界面的显示 包括用户信息与用户活动
+-  用户活动页添加了可拖拽的网格视图 方便自定义功能
 
 
 Discussing
