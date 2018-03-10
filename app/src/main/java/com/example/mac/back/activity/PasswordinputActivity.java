@@ -141,6 +141,9 @@ public class PasswordinputActivity extends BaseActivity {
                     EventBus.getDefault().post(new MessageEvent("登陆成功",baseBean));
                     ToastUtils.getInstanc(PasswordinputActivity.this).showToast("登陆成功");
                     SharedPreferencesUtils.putBoolean("cat","logined",true);
+                    SharedPreferencesUtils.putString("cat","username",baseBean.getData().getName());
+                    SharedPreferencesUtils.putString("cat","imgurl",baseBean.getData().getImageurl());
+                    SharedPreferencesUtils.putString("cat","phone",baseBean.getData().getPhone());
                     finishAll();
                 }else {
                     Logger.e("xxx");

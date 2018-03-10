@@ -32,6 +32,7 @@ import android.widget.Toast;
 
 
 import com.example.mac.back.R;
+import com.example.mac.back.base.ActivityManager;
 import com.example.mac.back.vasonic.SonicJavaScriptInterface;
 import com.example.mac.back.vasonic.SonicRuntimeImpl;
 import com.example.mac.back.vasonic.SonicSessionClientImpl;
@@ -74,6 +75,10 @@ public class BrowserActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ActivityManager activitymanager = ActivityManager.getInstance();
+        activitymanager.addActivity(this);
+
         Intent intent = getIntent();
         String url = intent.getStringExtra(PARAM_URL);
         int mode = intent.getIntExtra(PARAM_MODE, -1);

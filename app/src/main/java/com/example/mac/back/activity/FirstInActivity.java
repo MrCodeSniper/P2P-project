@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.mac.back.R;
+import com.example.mac.back.base.ActivityManager;
 import com.example.mac.back.utils.SharedPreferencesUtils;
 
 import java.util.ArrayList;
@@ -42,6 +43,8 @@ public class FirstInActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.firstin_layout);
+        ActivityManager activitymanager = ActivityManager.getInstance();
+        activitymanager.addActivity(this);
         viewPager = (ViewPager)   findViewById(R.id.viewPager);
         imageViews = new ArrayList<ImageView>();
         //初始化导航页面

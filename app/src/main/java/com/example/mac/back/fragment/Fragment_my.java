@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ import com.example.mac.back.activity.LoginActivity;
 import com.example.mac.back.adapter.GridViewAdapter;
 import com.example.mac.back.event.MessageEvent;
 import com.example.mac.back.utils.DensityUtil;
+import com.example.mac.back.utils.SharedPreferencesUtils;
 import com.huxq17.handygridview.HandyGridView;
 import com.huxq17.handygridview.listener.IDrawer;
 import com.huxq17.handygridview.listener.OnItemCapturedListener;
@@ -60,8 +62,10 @@ public class Fragment_my extends Fragment implements View.OnClickListener
     ImageView ivBack;
     @BindView(R.id.grid_tips)
     HandyGridView mGridView;
+    @BindView(R.id.ll_logined)
+    LinearLayout llLogined;
 
-    private int[] images={R.drawable.meee,R.drawable.gifts,R.drawable.diaamond,R.drawable.phonee,R.drawable.choujiang,R.drawable.data};
+    private int[] images = {R.drawable.meee, R.drawable.gifts, R.drawable.diaamond, R.drawable.phonee, R.drawable.choujiang, R.drawable.data};
 
 
     private List<String> strList;
@@ -79,7 +83,7 @@ public class Fragment_my extends Fragment implements View.OnClickListener
         unbinder = ButterKnife.bind(this, view);
         EventBus.getDefault().register(this);
         initData();
-        adapter = new GridViewAdapter(getActivity(), strList,images);
+        adapter = new GridViewAdapter(getActivity(), strList, images);
         mGridView.setAdapter(adapter);
         setMode(HandyGridView.MODE.LONG_PRESS);
         mGridView.setAutoOptimize(false);
@@ -136,6 +140,15 @@ public class Fragment_my extends Fragment implements View.OnClickListener
                     REQUEST_EXTERNAL_STORAGE
             );
         }
+
+        if(SharedPreferencesUtils.getBoolean("cat","logined",false)){
+            ivNologin.setVisibility(View.GONE);
+            llLogined.setVisibility(View.VISIBLE);
+        }else {
+            ivNologin.setVisibility(View.VISIBLE);
+            llLogined.setVisibility(View.GONE);
+        }
+
         return view;
     }
 
@@ -183,7 +196,6 @@ public class Fragment_my extends Fragment implements View.OnClickListener
         }
 
     }
-
 
     private void setMode(HandyGridView.MODE mode) {
         mGridView.setMode(mode);

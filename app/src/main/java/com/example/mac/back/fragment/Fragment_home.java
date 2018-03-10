@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.mac.back.R;
 import com.example.mac.back.activity.LoginActivity;
@@ -26,6 +27,7 @@ import com.example.mac.back.activity.WebViewActivity;
 import com.example.mac.back.adapter.RecyclingPagerAdapter;
 import com.example.mac.back.config.AppConfig;
 import com.example.mac.back.utils.IntentUtils;
+import com.example.mac.back.utils.SharedPreferencesUtils;
 import com.example.mac.back.view.AutoVerticalScrollTextView;
 import com.example.mac.back.view.ClipViewPager;
 import com.example.mac.back.view.RoundImageView;
@@ -46,11 +48,12 @@ public class Fragment_home extends Fragment {
     @BindView(R.id.page_container)
     RelativeLayout pageContainer;
     private TubatuAdapter mPagerAdapter;
-
     AutoVerticalScrollTextView verticalScrollTV;
     Unbinder unbinder;
     @BindView(R.id.vp_homepage)
     ClipViewPager mViewPager;
+
+    private boolean islogin=false;
 
     private int number = 0;
     private boolean isRunning = true;
@@ -65,40 +68,39 @@ public class Fragment_home extends Fragment {
     };
     private String[] strings = {"招财猫理财 经营许可证 :浙ICP证B2-20150235", "【加奖】邀请好友限时加奖，最高获得100元",};
 
+    private LinearLayout ll_user_parden;
+    private Button btn_register;
+    private LinearLayout ll_safe;
+    private TextView tv_name;
+    private RelativeLayout rl_logined;
+    private RelativeLayout rl_unlogined;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment1, null);
+
+        islogin=SharedPreferencesUtils.getBoolean("cat","logined",false);
         verticalScrollTV = view.findViewById(R.id.textview_auto_roll);
-        LinearLayout ll_user_parden=view.findViewById(R.id.ll_user_parden);
-        ll_user_parden.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String[] key={"url","title"};
-                String[] values={AppConfig.PARDEN,"新手乐园"};
-                IntentUtils.showIntent(getActivity(), WebViewActivity.class,key,values);
-            }
-        });
-        LinearLayout ll_safe=view.findViewById(R.id.ll_safe_proguard);
-        ll_safe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String[] key={"url","title"};
-                String[] values={AppConfig.SAFE,"安全保障"};
-                IntentUtils.showIntent(getActivity(), WebViewActivity.class,key,values);
-            }
-        });
-
-
-        Button btn_register=view.findViewById(R.id.btn_register);
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                IntentUtils.showIntent(getActivity(), LoginActivity.class);
-            }
-        });
+        tv_name=view.findViewById(R.id.tv_name);
+        rl_logined=view.findViewById(R.id.rl_logined);
+        rl_unlogined=view.findViewById(R.id.rl_unlogined);
+        ll_user_parden=view.findViewById(R.id.ll_user_parden);
+        btn_register=view.findViewById(R.id.btn_register);
+        ll_safe=view.findViewById(R.id.ll_safe_proguard);
         unbinder = ButterKnife.bind(this, view);
+
+
+        initListener();
         verticalScrollTV.setText(strings[0]);
         postTextChange();
+        initadapter();
+        initData();
+        LoginOrNo();
+        return view;
+    }
+
+    private void initadapter() {
         mViewPager.setPageTransformer(true, new ScalePageTransformer());
         pageContainer.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -106,12 +108,8 @@ public class Fragment_home extends Fragment {
                 return mViewPager.dispatchTouchEvent(event);
             }
         });
-
         mPagerAdapter = new TubatuAdapter(getActivity());
         mViewPager.setAdapter(mPagerAdapter);
-
-        initData();
-        return view;
     }
 
     private void initData() {
@@ -220,4 +218,52 @@ public class Fragment_home extends Fragment {
         isRunning = false;
         unbinder.unbind();
     }
+
+
+
+
+    private void initListener(){
+        ll_user_parden.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String[] key={"url","title"};
+                String[] values={AppConfig.PARDEN,"新手乐园"};
+                IntentUtils.showIntent(getActivity(), WebViewActivity.class,key,values);
+            }
+        });
+
+        ll_safe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String[] key={"url","title"};
+                String[] values={AppConfig.SAFE,"安全保障"};
+                IntentUtils.showIntent(getActivity(), WebViewActivity.class,key,values);
+            }
+        });
+
+
+
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IntentUtils.showIntent(getActivity(), LoginActivity.class);
+            }
+        });
+
+
+    }
+
+
+    private void LoginOrNo(){
+        if(islogin){
+            rl_unlogined.setVisibility(View.GONE);
+            rl_logined.setVisibility(View.VISIBLE);
+            tv_name.setText("您好,"+SharedPreferencesUtils.getString("cat","username",""));
+        }else {
+            rl_unlogined.setVisibility(View.VISIBLE);
+            rl_logined.setVisibility(View.GONE);
+            tv_name.setText("");
+        }
+    }
+
 }

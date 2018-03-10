@@ -8,7 +8,8 @@
 
 
     <RelativeLayout
-        android:id="@+id/rl_top"
+
+        android:id="@+id/rl_unlogined"
         android:layout_width="match_parent"
         android:layout_height="200dp">
 
@@ -50,8 +51,8 @@
             android:text="累计出借1元"
             android:textColor="#fff"
             />
-        
-        
+
+
         <Button
             android:id="@+id/btn_register"
             android:layout_marginTop="15dp"
@@ -73,6 +74,116 @@
             android:text="新手领518元"
             android:textColor="#fff"
             />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_logined"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:background="@drawable/homepage_background"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="招财猫截止今日"
+            android:textColor="#fff"
+            />
+
+        <TextView
+            android:layout_marginTop="40dp"
+            android:id="@+id/user_charge"
+            android:layout_centerHorizontal="true"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="昨日收益(元)"
+            android:textColor="#fff"
+            />
+
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/user_charge"
+            android:id="@+id/earn_count"
+            android:layout_centerHorizontal="true"
+            android:textSize="30sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00"
+            android:textColor="#fff"
+            />
+
+
+        <LinearLayout
+
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的猫粮"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="8"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的夺宝币"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="20"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
 
     </RelativeLayout>
 

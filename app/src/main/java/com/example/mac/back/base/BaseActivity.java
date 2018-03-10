@@ -46,15 +46,19 @@ public abstract class BaseActivity extends FragmentActivity {
     private long lastClickTime;
     /** 按钮连续点击最低间隔时间 单位：毫秒 **/
     public final static int CLICK_TIME = 500;
+    private ActivityManager activitymanager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         // 设置activity为无标题栏
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         EventBus.getDefault().register(this);
 
+        activitymanager = ActivityManager.getInstance();
+        activitymanager.addActivity(this);
         // 将activity推入栈中
         listActivity.push(this);
         // 初始化ui
