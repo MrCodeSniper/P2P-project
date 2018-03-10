@@ -81,6 +81,9 @@ day1.javaserver:
 - registerservlet 注册接口正常使用
 - sendSmsServlet smsVerifyServlet 短信验证码发送和验证接口 集成短信平台sdk
 
+day2.android:
+-  完成注册登陆后用户界面的显示 包括用户信息与用户活动
+-  用户活动页添加了可拖拽的网格视图 方便自定义功能
 
 
 Discussing
@@ -90,4 +93,4 @@ Discussing
 
 勾搭下
 --------
-<img src="https://raw.githubusercontent.com/meolu/walle-web/feature-weixin/docs/weixin.wushuiyong.jpg" width="244" height="314" alt="我的微信" align=left />
+<img src="http://upload-images.jianshu.io/upload_images/2634235-333dfbca6ecdd6ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="244" height="314" alt="我的微信" align=left />
