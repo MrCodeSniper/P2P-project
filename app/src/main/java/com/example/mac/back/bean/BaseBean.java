@@ -1,10 +1,12 @@
 package com.example.mac.back.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by mac on 2018/3/2.
  */
 
-public class BaseBean {
+public class BaseBean implements Serializable {
 
 
     public int getCode() {

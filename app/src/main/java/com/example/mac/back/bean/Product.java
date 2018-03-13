@@ -1,5 +1,6 @@
 package com.example.mac.back.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -25,7 +26,7 @@ public class Product extends BaseBean{
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable {
         /**
          * begin_date : 2018-03-05 00:00:00
          * category : ????
@@ -133,6 +134,21 @@ public class Product extends BaseBean{
                     ", name='" + name + '\'' +
                     ", secondrate=" + secondrate +
                     '}';
+        }
+
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DataBean) {
+                DataBean bean = (DataBean) obj;
+                return Integer.toString(this.getId()).equals(bean.getId());
+            }
+            return super.equals(obj);
+        }
+
+        @Override
+        public int hashCode() {
+            return Integer.toString(this.getId()).hashCode();
         }
     }
 

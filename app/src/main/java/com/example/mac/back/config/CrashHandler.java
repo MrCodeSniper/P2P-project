@@ -9,19 +9,11 @@ import android.os.Looper;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.mac.back.activity.LoginActivity;
-import com.example.mac.back.activity.PasswordinputActivity;
-import com.example.mac.back.activity.RegisterActivity;
 import com.example.mac.back.base.ActivityManager;
-import com.example.mac.back.base.BaseActivity;
-import com.example.mac.back.bean.BaseBean;
-import com.example.mac.back.utils.IntentUtils;
 import com.example.mac.back.utils.NetUtils;
-import com.example.mac.back.utils.ToastUtils;
 import com.itheima.retrofitutils.ItheimaHttp;
 import com.itheima.retrofitutils.Request;
 import com.itheima.retrofitutils.RequestMethod;
-import com.itheima.retrofitutils.listener.HttpResponseListener;
 import com.itheima.retrofitutils.listener.UploadListener;
 
 import java.io.File;
@@ -35,13 +27,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 
-import okhttp3.Headers;
 import okhttp3.MediaType;
 import okhttp3.Response;
-import okhttp3.ResponseBody;
-import retrofit2.Call;
 
 
 /**

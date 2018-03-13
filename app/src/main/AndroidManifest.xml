@@ -15,12 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".ui.activity.MainActivity">
 
         </activity>
 
 
-        <activity android:name=".activity.SplashActivity"
+        <activity android:name=".ui.activity.SplashActivity"
             android:theme="@style/splashTheme"
             >
             <intent-filter>
@@ -31,7 +31,7 @@
 
         </activity>
 
-        <activity android:name=".activity.FirstInActivity"
+        <activity android:name=".ui.activity.FirstInActivity"
             android:theme="@style/FirstTheme"
             >
 
@@ -40,16 +40,16 @@
 
         </activity>
 
-        <activity android:name=".activity.LoginActivity"></activity>
-        <activity android:name=".activity.RegisterActivity"></activity>
-        <activity android:name=".activity.WebViewActivity"></activity>
-        <activity android:name=".activity.BrowserActivity">
+        <activity android:name=".ui.activity.LoginActivity"></activity>
+        <activity android:name=".ui.activity.RegisterActivity"></activity>
+        <activity android:name=".ui.activity.WebViewActivity"></activity>
+        <activity android:name=".ui.activity.BrowserActivity">
 
 
 
 
         </activity>
-        <activity android:name=".activity.PasswordinputActivity"></activity>
+        <activity android:name=".ui.activity.PasswordinputActivity"></activity>
 
     </application>
 

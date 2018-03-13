@@ -1,10 +1,8 @@
 package com.example.mac.back.base;
 
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -13,13 +11,10 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
-import com.example.mac.back.R;
-import com.example.mac.back.event.MessageEvent;
-import com.itheima.systembartint.SystemBarTintManager;
+import com.example.mac.back.bean.MessageEvent;
 import com.orhanobut.logger.Logger;
 
 import org.greenrobot.eventbus.EventBus;
@@ -221,6 +216,19 @@ public abstract class BaseActivity extends FragmentActivity {
         int len = listActivity.size();
         for (int i = 0; i < len; i++) {
             Activity activity = listActivity.pop();
+            activity.finish();
+        }
+    }
+
+    //将activity全部关闭掉,除掉MainAcitiy
+    protected static void clearOther() {
+
+        int len = listActivity.size();
+        for (int i = 0; i < len; i++) {
+            Activity activity = listActivity.pop();
+            if (activity.getClass().getSimpleName().equals("MainActivity")) {
+                continue;
+            }
             activity.finish();
         }
     }

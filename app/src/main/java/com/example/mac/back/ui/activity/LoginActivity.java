@@ -1,4 +1,4 @@
-package com.example.mac.back.activity;
+package com.example.mac.back.ui.activity;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.GradientDrawable;
@@ -13,24 +13,30 @@ import com.example.mac.back.R;
 import com.example.mac.back.base.BaseActivity;
 import com.example.mac.back.bean.BaseBean;
 import com.example.mac.back.config.AppConfig;
+import com.example.mac.back.data.ProductApi;
+import com.example.mac.back.ui.contract.UserContract;
+import com.example.mac.back.ui.presenter.ProductPresenter;
+import com.example.mac.back.ui.presenter.UserPresenter;
 import com.example.mac.back.utils.IntentUtils;
 import com.itheima.retrofitutils.ItheimaHttp;
 import com.itheima.retrofitutils.Request;
 import com.itheima.retrofitutils.listener.HttpResponseListener;
-import com.orhanobut.logger.Logger;
 import com.rengwuxian.materialedittext.MaterialEditText;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Headers;
+import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 
 /**
  * Created by mac on 2018/2/28.
  */
-
-public class LoginActivity extends BaseActivity {
+//实现presenter的view接口 将具体实现传给控制层
+public class LoginActivity extends BaseActivity implements UserContract.View{
 
     @BindView(R.id.iv_quit)
     ImageView ivQuit;
@@ -45,10 +51,8 @@ public class LoginActivity extends BaseActivity {
     ImageView ivClear;
     @BindView(R.id.animationIV)
     ImageView animationIV;
-
-    Request request;
-
-    String request_url= AppConfig.UserExisit;
+    @Inject
+    UserPresenter mPresenter;
 
     private AnimationDrawable animationDrawable;
 
@@ -65,12 +69,12 @@ public class LoginActivity extends BaseActivity {
         anim_drawable.setColor(getResources().getColor(R.color.anim));
         animationIV.setBackground(anim_drawable);
         etPhone.setPrimaryColor(getResources().getColor(R.color.maincolor));
-
     }
 
     @Override
     protected void initData() {
-        request = ItheimaHttp.newGetRequest(AppConfig.UserExisit);//apiUrl格式："xxx/xxxxx"
+        mPresenter=new UserPresenter(ProductApi.getInstance(new OkHttpClient()));
+        mPresenter.attachView(this);
     }
 
     @Override
@@ -91,35 +95,11 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 btnNext.setEnabled(false);
-                request.putParams("phone",etPhone.getText().toString());
                 animationIV.setVisibility(View.VISIBLE);
                 animationIV.setImageResource(R.drawable.loading_anim);
                 animationDrawable=(AnimationDrawable)animationIV.getDrawable();
                 animationDrawable.start();
-
-                Call call = ItheimaHttp.send(request, new HttpResponseListener<BaseBean>() {
-                    @Override
-                    public void onResponse(BaseBean baseBean, Headers headers) {
-                        initNext();
-                        if(baseBean.isSuccess()){
-                            String[] params={"phone"};
-                            String [] values={etPhone.getText().toString()};
-                            IntentUtils.showIntent(LoginActivity.this,PasswordinputActivity.class,params,values);
-                        }else {
-                            String[] params={"phone"};
-                            String [] values={etPhone.getText().toString()};
-                            IntentUtils.showIntent(LoginActivity.this,RegisterActivity.class,params,values);
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<ResponseBody> call, Throwable e) {
-                        initNext();
-                        Toast.makeText(LoginActivity.this,"未知错误，请与管理员联系",Toast.LENGTH_SHORT);
-                    }
-                });
-
-
+                mPresenter.checkUserExist(etPhone.getText().toString());
             }
         });
     }
@@ -133,6 +113,33 @@ public class LoginActivity extends BaseActivity {
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    @Override
+    public void goToRegister() {
+        initNext();
+        String[] params={"phone"};
+        String [] values={etPhone.getText().toString()};
+        IntentUtils.showIntent(LoginActivity.this,RegisterActivity.class,params,values);
+    }
+
+    @Override
+    public void goToLogin() {
+        initNext();
+        String[] params={"phone"};
+        String [] values={etPhone.getText().toString()};
+        IntentUtils.showIntent(LoginActivity.this,PasswordinputActivity.class,params,values);
+    }
+
+    @Override
+    public void showError() {
+        initNext();
+        Toast.makeText(LoginActivity.this,"未知错误，请与管理员联系",Toast.LENGTH_SHORT);
+    }
+
+    @Override
+    public void complete() {
+        initNext();
     }
 
 

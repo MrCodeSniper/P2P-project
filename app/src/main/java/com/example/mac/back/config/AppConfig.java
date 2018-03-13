@@ -2,7 +2,7 @@ package com.example.mac.back.config;
 
 public class AppConfig{
 
-    public static final String HOST="192.168.1.103";
+    public static final String HOST="192.168.1.100";
     public static final String PORT=":8888";
     public static final String PROTROL="http://";
     public static final String BASEURL=PROTROL+HOST+PORT+"/P2PInvest/";
@@ -15,5 +15,9 @@ public class AppConfig{
     public static final String REGISTER=BASEURL+"Register";
     public static final String LOGIN=BASEURL+"login";
     public static final String UPLOAD_LOGS=BASEURL+"CrashUpload";
+
+
+    public static final String TAG_LOGINED="登陆了";
+    public static final String TAG_UNLOGINED="注销了";
 
 }

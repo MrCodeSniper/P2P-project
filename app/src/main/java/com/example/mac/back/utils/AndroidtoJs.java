@@ -1,11 +1,9 @@
 package com.example.mac.back.utils;
 
 import android.app.Activity;
-import android.content.Context;
 import android.webkit.JavascriptInterface;
 
-import com.example.mac.back.activity.LoginActivity;
-import com.example.mac.back.activity.WebViewActivity;
+import com.example.mac.back.ui.activity.LoginActivity;
 import com.orhanobut.logger.Logger;
 
 /**

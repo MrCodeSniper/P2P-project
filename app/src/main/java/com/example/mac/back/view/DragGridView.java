@@ -21,7 +21,7 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.example.mac.back.R;
-import com.example.mac.back.adapter.DragGridAdapter;
+import com.example.mac.back.ui.adapter.DragGridAdapter;
 
 
 /**
