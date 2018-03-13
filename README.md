@@ -95,6 +95,10 @@ day4.android(安全专题)
 - 但第二种来说app被反编译是很容易得到.so文件的 只需要知道如何调用.so不管其采取什么算法 也是存在风险的
 - 固本app在使用aes加密方法之上进行签名校验 防止二次打包
 
+day5.android（代码组织模式）
+- 将项目重新分包 更加简单易读
+- 将项目从mvc模式转到mvp模式  多了contract接口层 presenter控制层 但是代码逻辑上清晰了很多 单个类不会太臃肿 适合大型项目使用
+- 将网络请求框架 换为retrofit+okhttp 并添加了rxjava的链式调用 优化网络请求代码
 
 
 Discussing
