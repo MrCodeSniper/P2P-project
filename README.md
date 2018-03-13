@@ -11,7 +11,7 @@ XX猫-金融类app
 
 [Home Page](https://github.com/MrCodeSniper/) | [官方主页](https://github.com/MrCodeSniper/) | [中文说明](https://github.com/MrCodeSniper/) | [文档手册](https://github.com/MrCodeSniper/).
 
-Now, there are more than hundreds of companies hosted xxcat for deployment, star it if you like : )
+Now, this is my project hosted xxcat for deployment, star it if you like : )
 
 * Support git/svn Version control system.
 * User signup by admin/develop identity.
@@ -42,11 +42,11 @@ That's all. It's base package of java environment!
 Skills
 ----------
 
-- http-Retrofit+okhttp
-- Frame-MVC
-- Gray released：specify servers
-- Websocket instead of poll
-- A manager of static source
+- http-Retrofit2+okhttp2
+- Frame-MVP
+- javaserver
+- websocket
+- dragger2
 - Configure variables
 - Support Docker
 - Open api
