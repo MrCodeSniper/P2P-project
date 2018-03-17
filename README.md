@@ -11,7 +11,7 @@ XX猫-金融类app
 
 [Home Page](https://github.com/MrCodeSniper/) | [官方主页](https://github.com/MrCodeSniper/) | [中文说明](https://github.com/MrCodeSniper/) | [文档手册](https://github.com/MrCodeSniper/).
 
-Now, there are more than hundreds of companies hosted xxcat for deployment, star it if you like : )
+Now, this is my project hosted xxcat for deployment, star it if you like : )
 
 * Support git/svn Version control system.
 * User signup by admin/develop identity.
@@ -42,11 +42,11 @@ That's all. It's base package of java environment!
 Skills
 ----------
 
-- http-Retrofit+okhttp
-- Frame-MVC
-- Gray released：specify servers
-- Websocket instead of poll
-- A manager of static source
+- http-Retrofit2+okhttp2
+- Frame-MVP
+- javaserver
+- websocket
+- dragger2
 - Configure variables
 - Support Docker
 - Open api
@@ -95,6 +95,10 @@ day4.android(安全专题)
 - 但第二种来说app被反编译是很容易得到.so文件的 只需要知道如何调用.so不管其采取什么算法 也是存在风险的
 - 固本app在使用aes加密方法之上进行签名校验 防止二次打包
 
+day5.android（代码组织模式）
+- 将项目重新分包 更加简单易读
+- 将项目从mvc模式转到mvp模式  多了contract接口层 presenter控制层 但是代码逻辑上清晰了很多 单个类不会太臃肿 适合大型项目使用
+- 将网络请求框架 换为retrofit+okhttp 并添加了rxjava的链式调用 优化网络请求代码
 
 
 Discussing
