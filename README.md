@@ -100,6 +100,12 @@ day5.android（代码组织模式）
 - 将项目从mvc模式转到mvp模式  多了contract接口层 presenter控制层 但是代码逻辑上清晰了很多 单个类不会太臃肿 适合大型项目使用
 - 将网络请求框架 换为retrofit+okhttp 并添加了rxjava的链式调用 优化网络请求代码
 
+day6.android (设计模式)
+- 使用简单工厂对主页的所以fragment进行统一管理
+- 原本在oncreat中实例化的fragmentlist集合改为数组 
+- 在viewpager的适配器中 加载position时才实例化对应的fragment 节省内存 且 逻辑清晰
+
+
 
 Discussing
 ----------
