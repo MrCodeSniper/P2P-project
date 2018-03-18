@@ -31,4 +31,22 @@
     </style>
 
     <style name="AppTheme.Main" parent="AppTheme" ></style>
+
+
+
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:spacing">350dp</item>
+    </style>
+
+    <style name="dilog_header">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">#63B8FF</item>
+        <item name="android:text">版本更新提示</item>
+        <item name="android:background">#e6e6fa</item>
+    </style>
+
 </resources>

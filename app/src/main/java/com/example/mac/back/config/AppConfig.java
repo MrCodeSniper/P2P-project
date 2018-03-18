@@ -2,7 +2,7 @@ package com.example.mac.back.config;
 
 public class AppConfig{
 
-    public static final String HOST="192.168.1.100";
+    public static final String HOST="192.168.1.101";
     public static final String PORT=":8888";
     public static final String PROTROL="http://";
     public static final String BASEURL=PROTROL+HOST+PORT+"/P2PInvest/";

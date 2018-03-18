@@ -10,8 +10,25 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions"
+            }
+        }
+
+        ndk {
+            abiFilters   'x86_64', 'armeabi', 'armeabi-v7a', 'arm64-v8a','x86'
+            moduleName = 'bsdiff'
+        }
     }
 
+
+
+    sourceSets.main {
+        jni.srcDirs = []//disable automatic ndk-build call
+        jniLibs.srcDir "src/main/libs"
+    }
 
     buildTypes {
         release {
