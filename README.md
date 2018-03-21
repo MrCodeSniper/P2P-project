@@ -105,6 +105,9 @@ day6.android (设计模式)
 - 原本在oncreat中实例化的fragmentlist集合改为数组 
 - 在viewpager的适配器中 加载position时才实例化对应的fragment 节省内存 且 逻辑清晰
 
+day7.android (更新方式&设计模式)
+- 使用建造者设计模式 自定义customdialog 
+- 增加了增量更新功能 利用了jni bspatch.c 将服务器传来的补丁包与旧apk合并 并安装
 
 
 Discussing
