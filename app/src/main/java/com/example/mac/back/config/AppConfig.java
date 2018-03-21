@@ -1,7 +1,16 @@
 package com.example.mac.back.config;
 
+import android.os.Environment;
+
+import java.io.File;
+
 public class AppConfig{
 
+    public static final String ROOT= Environment.getExternalStorageDirectory()+ File.separator;
+    public static final boolean DEBUG = true;
+    public static final String PATCHPATH=ROOT+"patchpackage/"+"old_to_new.patch";
+    public static final String NEWAPKPATH=ROOT+"patchpackage/"+"dest.apk";
+    public static final String PACKNAME="com.example.mac.back";
     public static final String HOST="192.168.1.101";
     public static final String PORT=":8888";
     public static final String PROTROL="http://";
@@ -15,6 +24,7 @@ public class AppConfig{
     public static final String REGISTER=BASEURL+"Register";
     public static final String LOGIN=BASEURL+"login";
     public static final String UPLOAD_LOGS=BASEURL+"CrashUpload";
+    public static final String PATCH_FILE=BASEURL+"old-to-new.patch";
 
 
     public static final String TAG_LOGINED="登陆了";

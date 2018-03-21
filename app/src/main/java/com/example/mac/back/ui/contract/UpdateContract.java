@@ -12,13 +12,26 @@ public interface UpdateContract {
 
     interface View extends BaseContract.BaseView {//规定需要显示的功能
 
-        void showUpdateDialog();
+        void showUpdateDialog(String message);
 
-        void dismissUpdateDialog();
 
         void showDownloadDialog();
 
+        void prepareMerge();
+
         void retrunToInstall();
+
+        void changeProgress(int progress);
+
+        void dowloadFinish();
+
+        void dowloadError();
+
+        void showMergeDialog();
+
+        void mergeSuccess();
+
+        void mergeFailed();
 
 
     }

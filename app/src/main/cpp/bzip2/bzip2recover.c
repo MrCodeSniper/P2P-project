@@ -299,7 +299,6 @@ MaybeUInt64 rbStart[BZ_MAX_HANDLED_BLOCKS];
 MaybeUInt64 rbEnd  [BZ_MAX_HANDLED_BLOCKS];
 
 
-
 /*-----------------------------------------------------------*/
 /*--- end                                  bzip2recover.c ---*/
 /*-----------------------------------------------------------*/

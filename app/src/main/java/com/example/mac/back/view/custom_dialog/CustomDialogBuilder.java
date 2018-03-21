@@ -27,29 +27,36 @@ public class CustomDialogBuilder implements Builder {
     private Dialog.OnClickListener negativeButtonListener;
     private View contentView;
 
-    private static volatile CustomDialogBuilder instance;
+//    private static volatile CustomDialogBuilder instance;
 
-    private Context mContext;
+    private  Context mContext;
 
     private Custom_dialog mDialog;
-
+    private static  CustomDialogBuilder instance;
 
     private CustomDialogBuilder(Context context) {
             this.mContext=context;
     }
 
+//    public static CustomDialogBuilder getInstance(Context context){
+//        if(instance==null){
+//            synchronized (CustomDialogBuilder.class) {
+//                if (instance == null) {
+//                    instance = new CustomDialogBuilder(context);
+//                }
+//            }
+//        }
+//        return instance;
+//    }
+
+
+
     public static CustomDialogBuilder getInstance(Context context){
         if(instance==null){
-            synchronized (CustomDialogBuilder.class) {
-                if (instance == null) {
-                    instance = new CustomDialogBuilder(context);
-                }
-            }
+            instance=new CustomDialogBuilder(context);
         }
         return instance;
     }
-
-
 
 
 

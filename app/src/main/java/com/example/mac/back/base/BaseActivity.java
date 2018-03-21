@@ -2,7 +2,11 @@ package com.example.mac.back.base;
 
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -14,7 +18,9 @@ import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import com.example.mac.back.R;
 import com.example.mac.back.bean.MessageEvent;
+import com.example.mac.back.ui.activity.MainActivity;
 import com.orhanobut.logger.Logger;
 
 import org.greenrobot.eventbus.EventBus;
@@ -22,6 +28,8 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.Stack;
+
+import static android.app.PendingIntent.FLAG_CANCEL_CURRENT;
 
 /**
  * BaseActivity
@@ -43,6 +51,7 @@ public abstract class BaseActivity extends FragmentActivity {
     public final static int CLICK_TIME = 500;
     private ActivityManager activitymanager;
 
+    public NotificationManager mNotificationManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +65,15 @@ public abstract class BaseActivity extends FragmentActivity {
         activitymanager.addActivity(this);
         // 将activity推入栈中
         listActivity.push(this);
+
+
+        initService();
+
+
+
+
+
+
         // 初始化ui
         initUI();
 //        initStatuBar(R.color.truslent);
@@ -64,7 +82,14 @@ public abstract class BaseActivity extends FragmentActivity {
         // 事件监听
         initListener();
 
+        initSocketService();
+
     }
+
+    protected void initSocketService() {
+
+    }
+
 
 //    public void initStatuBar(int id) {
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -294,4 +319,42 @@ public abstract class BaseActivity extends FragmentActivity {
     }
 
     /***********************************************************************/
+
+
+
+
+    public PendingIntent getDefalutIntent(int flags){
+        PendingIntent pendingIntent= PendingIntent.getActivity(this, 1, new Intent(), flags);
+        return pendingIntent;
+    }
+
+
+    public void clearAllNotify() {
+        mNotificationManager.cancelAll();
+    }
+
+
+    public void clearNotify(int notifyId){
+        mNotificationManager.cancel(notifyId);
+//		mNotification.cancel(getResources().getString(R.string.app_name));
+    }
+
+
+    private void initService() {
+        mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

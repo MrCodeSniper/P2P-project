@@ -1,7 +1,11 @@
 apply plugin: 'com.android.application'
 
+
+
 android {
     compileSdkVersion 27
+
+
     defaultConfig {
         applicationId "com.example.mac.back"
         minSdkVersion 16
@@ -11,24 +15,14 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
 
+
         externalNativeBuild {
             cmake {
-                cppFlags "-frtti -fexceptions"
+                cppFlags ""
             }
         }
-
-        ndk {
-            abiFilters   'x86_64', 'armeabi', 'armeabi-v7a', 'arm64-v8a','x86'
-            moduleName = 'bsdiff'
-        }
     }
 
-
-
-    sourceSets.main {
-        jni.srcDirs = []//disable automatic ndk-build call
-        jniLibs.srcDir "src/main/libs"
-    }
 
     buildTypes {
         release {
@@ -36,7 +30,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
+
 }
+
+
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -57,6 +62,7 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
 
     //ui
+    compile 'com.mylhyl:circleDialog:2.4.0'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
     compile 'com.github.clans:fab:1.6.4'

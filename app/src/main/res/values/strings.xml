@@ -21,4 +21,9 @@
     <string name="illegal_url">不合法的URL</string>
     <string name="edit">编辑</string>
     <string name="password_title">输入密码</string>
+    <string name="demo_info1">1.先安装招财猫v1.1</string>
+    <string name="demo_info2">2.将由服务器端生成的差分文件 拷贝至：/sdcard/patchfile.patch </string>
+    <string name="demo_info3">3.点击 Start</string>
+    <string name="demo_start">Start</string>
+    <string name="demo_github">GitHub</string>
 </resources>
