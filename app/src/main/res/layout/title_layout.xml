@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<RelativeLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:paddingTop="8dp"
             android:id="@+id/iv_quit"
             android:layout_marginLeft="20dp"
             android:layout_centerVertical="true"
@@ -17,18 +15,14 @@
             />
 
         <TextView
-            android:paddingTop="8dp"
-            android:id="@+id/tv_titles"
             android:gravity="center"
             android:layout_centerInParent="true"
-            android:textSize="18sp"
-            android:textColor="#222"
-            android:text="xx计划1000000号"
+            android:textSize="15sp"
+            android:textColor="#000"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-           />
+            android:text="输入手机号码"/>
 
-    </RelativeLayout>
-
+</RelativeLayout>
 
 

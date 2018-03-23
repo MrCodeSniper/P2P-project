@@ -1,71 +1,52 @@
 package com.example.mac.back.bean;
 
-import java.io.Serializable;
-import java.util.List;
-
 /**
- * Created by mac on 2018/3/1.
+ * Created by mac on 2018/3/23.
  */
 
-public class Product extends BaseBean{
+public class ProductDetail extends BaseBean {
 
 
     /**
-     * code : 200
-     * data : [{"begin_date":"2018-03-05 00:00:00","category":"????","firstrate":0.065,"id":1,"is_active":true,"loan_deadline":"2018-04-05 00:00:00","loan_progress":0.44,"name":"????1?","secondrate":0.005}]
+     * data : {"begin_date":"2018-03-05 00:00:00","category":"短期灵活","firstrate":0.065,"id":1,"is_active":true,"loan_amount":10,"loan_deadline":"2018-04-05 00:00:00","loan_progress":0.44,"min_loan":0.1,"name":"众信计划1号","secondrate":0.005}
      */
 
+    private DataBean data;
 
-    private List<DataBean> data;
-
-    public List<DataBean> getData() {
+    public DataBean getData() {
         return data;
     }
 
-    public void setData(List<DataBean> data) {
+    public void setData(DataBean data) {
         this.data = data;
     }
 
-    public static class DataBean implements Serializable {
+    public static class DataBean {
         /**
          * begin_date : 2018-03-05 00:00:00
-         * category : ????
+         * category : 短期灵活
          * firstrate : 0.065
          * id : 1
          * is_active : true
+         * loan_amount : 10
          * loan_deadline : 2018-04-05 00:00:00
          * loan_progress : 0.44
-         * name : ????1?
+         * min_loan : 0.1
+         * name : 众信计划1号
          * secondrate : 0.005
          */
+
         private String begin_date;
         private String category;
         private double firstrate;
         private int id;
         private boolean is_active;
+        private int loan_amount;
         private String loan_deadline;
         private double loan_progress;
+        private double min_loan;
         private String name;
         private double secondrate;
-        private double loan_amout;
-
-        public double getLoan_amout() {
-            return loan_amout;
-        }
-
-        public void setLoan_amout(double loan_amout) {
-            this.loan_amout = loan_amout;
-        }
-
-        public double getMin_loan() {
-            return min_loan;
-        }
-
-        public void setMin_loan(double min_loan) {
-            this.min_loan = min_loan;
-        }
-
-        private double min_loan;
 
         public String getBegin_date() {
             return begin_date;
@@ -107,6 +88,14 @@ public class Product extends BaseBean{
             this.is_active = is_active;
         }
 
+        public int getLoan_amount() {
+            return loan_amount;
+        }
+
+        public void setLoan_amount(int loan_amount) {
+            this.loan_amount = loan_amount;
+        }
+
         public String getLoan_deadline() {
             return loan_deadline;
         }
@@ -121,6 +110,14 @@ public class Product extends BaseBean{
 
         public void setLoan_progress(double loan_progress) {
             this.loan_progress = loan_progress;
+        }
+
+        public double getMin_loan() {
+            return min_loan;
+        }
+
+        public void setMin_loan(double min_loan) {
+            this.min_loan = min_loan;
         }
 
         public String getName() {
@@ -138,41 +135,5 @@ public class Product extends BaseBean{
         public void setSecondrate(double secondrate) {
             this.secondrate = secondrate;
         }
-
-
-
-
-        @Override
-        public String toString() {
-            return "DataBean{" +
-                    "begin_date='" + begin_date + '\'' +
-                    ", category='" + category + '\'' +
-                    ", firstrate=" + firstrate +
-                    ", id=" + id +
-                    ", is_active=" + is_active +
-                    ", loan_deadline='" + loan_deadline + '\'' +
-                    ", loan_progress=" + loan_progress +
-                    ", name='" + name + '\'' +
-                    ", secondrate=" + secondrate +
-                    '}';
-        }
-
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof DataBean) {
-                DataBean bean = (DataBean) obj;
-                return Integer.toString(this.getId()).equals(bean.getId());
-            }
-            return super.equals(obj);
-        }
-
-        @Override
-        public int hashCode() {
-            return Integer.toString(this.getId()).hashCode();
-        }
     }
-
-
-
 }
