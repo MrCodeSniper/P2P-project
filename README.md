@@ -115,6 +115,9 @@ update8.android (推送机制)
 update8.java (推送机制)
 - 使用Socket通信 循环接收连接 并在控制台推送消息 serverSocket
 
+update9.android
+- 增加了产品详情页 用户可以查看产品信息并购买
+
 
 
 Discussing
