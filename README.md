@@ -118,6 +118,11 @@ update8.java (推送机制)
 update9.android
 - 增加了产品详情页 用户可以查看产品信息并购买
 
+update10.android
+- 增加了自定义view做的社交化分享界面 并集成部分功能
+
+![my_gif.gif](https://upload-images.jianshu.io/upload_images/2634235-0d4eceb677dbe411.gif?imageMogr2/auto-orient/strip)
+
 
 
 Discussing
