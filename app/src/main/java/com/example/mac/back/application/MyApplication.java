@@ -2,6 +2,7 @@ package com.example.mac.back.application;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 
 import com.example.mac.back.config.AppConfig;
 import com.example.mac.back.config.CrashHandler;
@@ -53,6 +54,11 @@ public class MyApplication extends Application {
 
 
 
+    }
+
+
+    public static Context getContext(){
+        return getContext();
     }
 
 

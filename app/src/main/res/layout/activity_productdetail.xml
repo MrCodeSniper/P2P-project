@@ -171,6 +171,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="出借记录"
@@ -178,13 +179,16 @@
             android:textColor="#777"
             />
 
-        <TextView
+
+
+
+        <com.example.mac.back.view.AutoVerticalScrollTextViewSecond
             android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_auto_roll"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:text="剩余可投0.20万元"
-            android:textSize="14sp"
-            android:textColor="#777"
+            android:textSize="20sp"
+            android:textColor="#000"
             />
 
     </RelativeLayout>

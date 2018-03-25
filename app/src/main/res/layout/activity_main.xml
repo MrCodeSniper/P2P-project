@@ -52,9 +52,40 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/circle_pre"
         android:id="@+id/main_image_center"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
          />
+
+
+        <ImageView
+            android:background="@color/truslent"
+            android:visibility="gone"
+            android:id="@+id/center"
+            android:layout_marginTop="-9dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/weibo"
+            android:layout_width="45dp"
+            android:layout_height="45dp" />
+
+        <ImageView
+            android:background="@color/truslent"
+            android:visibility="gone"
+            android:id="@+id/center_two"
+            android:layout_marginTop="-9dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/friendship"
+            android:layout_width="45dp"
+            android:layout_height="45dp" />
+
+        <ImageView
+            android:background="@color/truslent"
+            android:visibility="gone"
+            android:id="@+id/center_three"
+            android:layout_marginTop="-9dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/qq_icon"
+            android:layout_width="45dp"
+            android:layout_height="45dp" />
 
     </RelativeLayout>
 
