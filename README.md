@@ -121,7 +121,8 @@ update9.android
 update10.android
 - 增加了自定义view做的社交化分享界面 并集成部分功能
 
-![my_gif.gif](https://upload-images.jianshu.io/upload_images/2634235-0d4eceb677dbe411.gif?imageMogr2/auto-orient/strip)
+![社交分享](https://upload-images.jianshu.io/upload_images/2634235-a16f1f98b27642df.gif?imageMogr2/auto-orient/strip)
+
 
 
 
