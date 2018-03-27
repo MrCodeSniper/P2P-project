@@ -123,6 +123,8 @@ update10.android
 
 ![](https://upload-images.jianshu.io/upload_images/2634235-0d4eceb677dbe411.gif?imageMogr2/auto-orient/strip)
 
+update11.android
+-理清事件传递过程，修正draggridview与viewpager的冲突 并优化draggridview代码
 
 
 
