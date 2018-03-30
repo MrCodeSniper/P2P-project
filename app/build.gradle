@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.mac.back"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -16,11 +16,6 @@ android {
         multiDexEnabled true
 
 
-        externalNativeBuild {
-            cmake {
-                cppFlags ""
-            }
-        }
     }
 
 
@@ -31,13 +26,10 @@ android {
         }
     }
 
-    externalNativeBuild {
-        cmake {
-            path "CMakeLists.txt"
-        }
-    }
 
 
+
+    sourceSets { main { jni.srcDirs = ['src/main/jni', 'src/main/jni/'] } }
 }
 
 
@@ -81,5 +73,9 @@ dependencies {
 
     compile 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.0.2'
+
 
 }
