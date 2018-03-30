@@ -126,6 +126,8 @@ update10.android
 update11.android
 -理清事件传递过程，修正draggridview与viewpager的冲突 并优化draggridview代码
 
+update12.android
+-导入dagger2依赖注入框架并配合mvp重构项目
 
 
 Discussing
