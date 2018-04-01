@@ -45,8 +45,8 @@ Skills
 - Frame-MVP
 - javaserver
 - websocket
-- dragger2
-- Configure variables
+- dagger2
+- rxjava&rxandroid
 - Support Docker
 - Open api
 - Command line
@@ -124,8 +124,10 @@ update10.android
 ![](https://upload-images.jianshu.io/upload_images/2634235-0d4eceb677dbe411.gif?imageMogr2/auto-orient/strip)
 
 update11.android
--理清事件传递过程，修正draggridview与viewpager的冲突 并优化draggridview代码
+- 理清事件传递过程，修正draggridview与viewpager的冲突 并优化draggridview代码
 
+update12.android
+- 导入dagger2依赖注入框架并配合mvp重构项目
 
 
 Discussing
