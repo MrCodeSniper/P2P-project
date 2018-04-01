@@ -102,8 +102,6 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         initView();//初始化控件
         StatusBarUtils statusBarUtils=new StatusBarUtils(this);
         statusBarUtils.initStatuBar(R.color.maincolor);
-//        String code = AESEncrypt.decode(this, ecode);
-//        Logger.e(code+"")
     }
 
     @Override

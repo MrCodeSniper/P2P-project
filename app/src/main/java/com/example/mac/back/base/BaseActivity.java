@@ -19,8 +19,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.example.mac.back.R;
+import com.example.mac.back.application.MyApplication;
 import com.example.mac.back.bean.MessageEvent;
 import com.example.mac.back.ui.activity.MainActivity;
+import com.example.mac.back.ui.component.AppComponent;
 import com.orhanobut.logger.Logger;
 
 import org.greenrobot.eventbus.EventBus;
@@ -66,6 +68,8 @@ public abstract class BaseActivity extends FragmentActivity {
         // 将activity推入栈中
         listActivity.push(this);
 
+        setupActivityComponent(MyApplication.getsInstance().getAppComponent());
+
 
         initService();
 
@@ -87,6 +91,11 @@ public abstract class BaseActivity extends FragmentActivity {
     }
 
     protected void initSocketService() {
+
+    }
+
+
+    protected  void setupActivityComponent(AppComponent appComponent){
 
     }
 

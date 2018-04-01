@@ -15,6 +15,8 @@ import com.example.mac.back.bean.Bill;
 import com.example.mac.back.bean.Product;
 import com.example.mac.back.bean.ProductDetail;
 import com.example.mac.back.data.ProductApi;
+import com.example.mac.back.ui.component.AppComponent;
+import com.example.mac.back.ui.component.DaggerProductComponent;
 import com.example.mac.back.ui.contract.ProductDetailContract;
 import com.example.mac.back.ui.presenter.ProductPresenter;
 import com.example.mac.back.utils.DateUtils;
@@ -39,6 +41,7 @@ import okhttp3.OkHttpClient;
  */
 
 public class ProductDetailActivity extends BaseActivity implements ProductDetailContract.View {
+
     @Inject
     ProductPresenter mPresenter;
     @BindView(R.id.iv_quit)
@@ -71,6 +74,7 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
     TextView tvEndday;
     @BindView(R.id.tv_auto_roll)
     AutoVerticalScrollTextViewSecond tvAutoRoll;
+
     private String product_id;
     private int number = 0;
     private boolean isRunning = true;
@@ -95,10 +99,19 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
     @Override
     protected void initData() {
         product_id = getIntent().getStringExtra("product_id");
-        mPresenter = new ProductPresenter(ProductApi.getInstance(new OkHttpClient()));
+       // mPresenter = new ProductPresenter(ProductApi.getInstance(new OkHttpClient()));
         mPresenter.attachView(this);
         mPresenter.getProductById(product_id);
         mPresenter.getBillByProductId(product_id);
+    }
+
+
+    @Override
+    protected void setupActivityComponent(AppComponent appComponent) {
+        DaggerProductComponent.builder()
+                .appComponent(appComponent)//dependecy
+                .build()
+                .inject(this);
     }
 
     @Override
@@ -120,7 +133,6 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
     public void refreshDetail(ProductDetail data) {
 
         tvTitles.setText(data.getData().getName());
-
         tvBeginday.setText(data.getData().getBegin_date());
         tvEndday.setText(data.getData().getLoan_deadline());
         Double totalrate = (data.getData().getFirstrate() + data.getData().getSecondrate()) * 100;
@@ -151,11 +163,9 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
 
     @Override
     public void showUpAndDownView(Bill data) {
-
         for (int i=0;i<data.getData().size();i++){
             strings.add(data.getData().get(i).getPhone()+"        "+data.getData().get(i).getBuy_amount()+"万元");
         }
-
         postTextChange();
     }
 
@@ -217,5 +227,10 @@ public class ProductDetailActivity extends BaseActivity implements ProductDetail
     protected void onDestroy() {
         super.onDestroy();
         isRunning=false;
+        if (mPresenter != null) {
+            mPresenter.detachView();
+        }
     }
+
+
 }
