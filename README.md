@@ -35,6 +35,7 @@ Requirements
 * eclipse for javaee
 * Mysql sqyog
 * genymotion
+* visual studio code
 
 That's all. It's base package of java environment!
 
@@ -47,8 +48,8 @@ Skills
 - websocket
 - dagger2
 - rxjava&rxandroid
-- Support Docker
-- Open api
+- AIDL(Using Binder FrameWork)
+- jni&ndk
 - Command line
 
 
