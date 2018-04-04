@@ -3,10 +3,14 @@ package com.example.mac.back.ui.activity;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Environment;
 import android.os.Handler;
+import android.os.Looper;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTabHost;
@@ -21,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mac.back.R;
 import com.example.mac.back.application.MyApplication;
@@ -36,13 +41,20 @@ import com.example.mac.back.ui.contract.UpdateContract;
 import com.example.mac.back.ui.fragment.Fragment_home;
 import com.example.mac.back.ui.presenter.UpdatePresenter;
 import com.example.mac.back.utils.ApkUtils;
+import com.example.mac.back.utils.SharedPreferencesUtils;
 import com.example.mac.back.utils.StatusBarUtils;
 import com.example.mac.back.view.ScrollOrNotViewPager;
 import com.huxq17.handygridview.HandyGridView;
 import com.mylhyl.circledialog.CircleDialog;
 import com.mylhyl.circledialog.params.ProgressParams;
 import com.orhanobut.logger.Logger;
+import com.qihoo360.replugin.RePlugin;
+import com.qihoo360.replugin.model.PluginInfo;
+import com.qihoo360.replugin.utils.FileUtils;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -55,8 +67,8 @@ import okhttp3.OkHttpClient;
 public class MainActivity extends BaseActivity implements ViewPager.OnPageChangeListener, TabHost.OnTabChangeListener ,UpdateContract.View,PushService.UpdateUI{
 
 
-
-
+    private static final String PATH = Environment.getExternalStorageDirectory().getAbsolutePath();
+    private String mNewApk = PATH + "/new.apk";
     private ImageView iv_center_three;
     private ImageView iv_center_two;
     private ImageView iv_center;
@@ -333,8 +345,100 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     @Override
     public void dowloadFinish() {
         builder.setProgressText("下载完成").create().dismiss();
-        mPresenter.old_to_newAPK();
+//        mPresenter.old_to_newAPK();
+        merge();
     }
+
+
+
+    private void merge() {
+        if (RePlugin.isPluginInstalled("app-debug")) {
+            RePlugin.startActivity(MainActivity.this, RePlugin.createIntent("app-debug", "com.wang.appaddupdatedemo.FirstActivity"));
+        } else {
+            Toast.makeText(MainActivity.this, "You must install plugin first!", Toast.LENGTH_SHORT).show();
+            final ProgressDialog pd = ProgressDialog.show(MainActivity.this, "Installing...", "Please wait...", true, true);
+            // FIXME: 仅用于安装流程演示 2017/7/24
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    simulateInstallExternalPlugin();
+                    pd.dismiss();
+                }
+            }, 1000);
+        }
+    }
+
+
+        /**
+         * 模拟安装或升级（覆盖安装）外置插件
+         * 注意：为方便演示，外置插件临时放置到Host的assets/external目录下，具体说明见README</p>
+         */
+    private void simulateInstallExternalPlugin() {
+        String demo3Apk= "app-debug.apk";
+        String demo3apkPath =demo3Apk;
+
+        // 文件是否已经存在？直接删除重来
+        String pluginFilePath = getFilesDir().getAbsolutePath() + File.separator + demo3Apk;
+        File pluginFile = new File(pluginFilePath);
+        if (pluginFile.exists()) {
+            FileUtils.deleteQuietly(pluginFile);
+        }
+
+        // 开始复制
+        copyAssetsFileToAppFiles(demo3apkPath, demo3Apk);
+        PluginInfo info = null;
+        if (pluginFile.exists()) {
+            info = RePlugin.install(pluginFilePath);
+        }
+
+        if (info != null) {
+            RePlugin.startActivity(MainActivity.this, RePlugin.createIntent(info.getName(), "com.wang.appaddupdatedemo.FirstActivity"));
+        } else {
+            Toast.makeText(MainActivity.this, "install external plugin failed", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==2){
+            ApkUtils.installApk(this,mNewApk);
+        }
+    }
+
+    /**
+     * 从assets目录中复制某文件内容
+     *  @param  assetFileName assets目录下的Apk源文件路径
+     *  @param  newFileName 复制到/data/data/package_name/files/目录下文件名
+     */
+    private void copyAssetsFileToAppFiles(String assetFileName, String newFileName) {
+        InputStream is = null;
+        FileOutputStream fos = null;
+        int buffsize = 1024;
+
+        try {
+            is = this.getAssets().open(assetFileName);
+            fos = this.openFileOutput(newFileName, Context.MODE_PRIVATE);
+            int byteCount = 0;
+            byte[] buffer = new byte[buffsize];
+            while((byteCount = is.read(buffer)) != -1) {
+                fos.write(buffer, 0, byteCount);
+            }
+            fos.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                is.close();
+                fos.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
 
     @Override
     public void dowloadError() {
@@ -375,6 +479,8 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     public void complete() {
 
     }
+
+
 
 
 

@@ -86,7 +86,7 @@ public class BitmpUtils {
             }
             f = new File(file, bitName + ".jpg");
         } else {
-            File file = new File(MyApplication.getContext().getCacheDir().toString());
+            File file = new File(MyApplication.getsInstance().getCacheDir().toString());
             if (!file.exists()) {//判断目录是否存在
                 file.mkdir();
             }

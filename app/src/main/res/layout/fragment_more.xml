@@ -201,6 +201,7 @@
 
 
         <TextView
+            android:id="@+id/tv_appinfo"
             android:layout_gravity="center_vertical"
             android:textColor="#333"
             android:text="@string/about_us"

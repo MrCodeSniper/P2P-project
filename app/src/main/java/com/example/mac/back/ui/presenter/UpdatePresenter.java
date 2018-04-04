@@ -42,8 +42,8 @@ public class UpdatePresenter extends RxPresenter<UpdateContract.View>  implement
 
 
 
-
-
+    private static final String PATH = Environment.getExternalStorageDirectory().getAbsolutePath();
+    private String mNewApk = PATH + "/new.apk";
     private static final String TAG = "UpdatePresenter";
     private ProductApi productApi;
     Subscription rxSubscription;
