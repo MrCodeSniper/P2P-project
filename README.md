@@ -4,7 +4,7 @@
 XX猫-金融类app
 =========================
 [![Build Status](https://travis-ci.org/meolu/walle-web.svg?branch=master)](https://travis-ci.org/meolu/walle-web)
-[![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
+[![Yii2](https://img.shields.io/badge/Powered_by-Android_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
 
 2018 first app Thanks for your review.
 
@@ -35,6 +35,7 @@ Requirements
 * eclipse for javaee
 * Mysql sqyog
 * genymotion
+* visual studio code
 
 That's all. It's base package of java environment!
 
@@ -47,8 +48,8 @@ Skills
 - websocket
 - dagger2
 - rxjava&rxandroid
-- Support Docker
-- Open api
+- AIDL(Using Binder FrameWork)
+- jni&ndk
 - Command line
 
 
@@ -128,6 +129,9 @@ update11.android
 
 update12.android
 - 导入dagger2依赖注入框架并配合mvp重构项目
+
+update13.android
+- 使用AIDL实现调用Server App提供的服务
 
 
 Discussing
