@@ -51,6 +51,7 @@ Skills
 - AIDL(Using Binder FrameWork)
 - jni&ndk
 - Command line
+- PluginDevelopment
 
 
 Screenshots
@@ -132,6 +133,10 @@ update12.android
 
 update13.android
 - 使用AIDL实现调用Server App提供的服务
+
+update14.android
+- 使用插件化开发将 ndk增量更新 从业务中脱离出来成为单独的apk
+- 并使用360Plugin 将apk作为资源并动态加载
 
 
 Discussing
