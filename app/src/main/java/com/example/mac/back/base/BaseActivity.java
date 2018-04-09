@@ -71,7 +71,7 @@ public abstract class BaseActivity extends FragmentActivity {
         setupActivityComponent(MyApplication.getsInstance().getAppComponent());
 
 
-        initService();
+        mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
 
 
@@ -80,12 +80,12 @@ public abstract class BaseActivity extends FragmentActivity {
 
         // 初始化ui
         initUI();
-//        initStatuBar(R.color.truslent);
+//      initStatuBar(R.color.truslent);
         // 初始化数据
         initData();
         // 事件监听
         initListener();
-
+        //初始化推送
         initSocketService();
 
     }
@@ -349,9 +349,6 @@ public abstract class BaseActivity extends FragmentActivity {
     }
 
 
-    private void initService() {
-        mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-    }
 
 
 

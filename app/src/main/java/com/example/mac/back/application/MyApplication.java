@@ -1,6 +1,6 @@
 package com.example.mac.back.application;
 
-import android.app.Application;
+import android.Manifest;
 import android.content.Context;
 import android.util.Log;
 
@@ -17,13 +17,6 @@ import com.qihoo360.replugin.RePlugin;
 import com.qihoo360.replugin.RePluginApplication;
 import com.qihoo360.replugin.RePluginConfig;
 import com.qihoo360.replugin.RePluginEventCallbacks;
-import com.zhy.http.okhttp.OkHttpUtils;
-
-import net.robinx.lib.encrypt.conceal.ConcealHelper;
-
-import java.util.concurrent.TimeUnit;
-
-import okhttp3.OkHttpClient;
 
 /**
  * Created by mac on 2018/3/2.
@@ -31,9 +24,9 @@ import okhttp3.OkHttpClient;
 
 public class MyApplication extends RePluginApplication {
 
+    //dagger component组件
     private AppComponent mAppComponent;
     private static MyApplication sInstance;
-
 
     @Override
     protected void attachBaseContext(Context base) {
@@ -44,10 +37,9 @@ public class MyApplication extends RePluginApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        ItheimaHttp.init(this, AppConfig.BASEURL);
-//        SharedPreferencesUtils.init(this);
 //        CrashHandler crashHandler = CrashHandler.getInstance();
 //        crashHandler.init(getApplicationContext());
+        ItheimaHttp.init(this, AppConfig.BASEURL);
 
         sInstance=this;
 
@@ -56,32 +48,21 @@ public class MyApplication extends RePluginApplication {
                 .userModel(new UserModel())
                 .build();
 
-        ConcealHelper.init(this);
-
-
-        OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .connectTimeout(10000L, TimeUnit.MILLISECONDS)
-                .readTimeout(10000L, TimeUnit.MILLISECONDS)
-                .build();
-
-        OkHttpUtils.initClient(okHttpClient);
-
-
+//        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+//                .connectTimeout(10000L, TimeUnit.MILLISECONDS)
+//                .readTimeout(10000L, TimeUnit.MILLISECONDS)
+//                .build();
+//        OkHttpUtils.initClient(okHttpClient);
 
         SharedPreferencesUtils.init(this);
-
-
-
-
     }
 
+    //让其他类直接关联application
     public static MyApplication getsInstance() {
         return sInstance;
     }
 
-//    public static Context getContext(){
-//        return getContext();
-//    }
+
 
     public AppComponent getAppComponent() {
         return mAppComponent;

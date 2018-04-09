@@ -1,11 +1,21 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 
 
 android {
     compileSdkVersion 27
-
-
+    flavorDimensions "default"
+    /*签名配置*/
+    signingConfigs {
+        release {
+            storeFile file('/Users/mac/Downloads/cat.keystore')
+            storePassword "q63857952"
+            keyAlias "cat"
+            keyPassword "q63857952"
+        }
+    }
+    /*默认配置*/
     defaultConfig {
         applicationId "com.example.mac.back"
         minSdkVersion 17
@@ -14,71 +24,121 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
-
-
     }
 
 
     buildTypes {
+        //线上环境
         release {
+            debuggable false
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+        }
+    }
+
+    lintOptions {
+        ignoreWarnings true
+        checkReleaseBuilds false
+    }
+
+    sourceSets {
+        main { jni.srcDirs = ['src/Tesst/jni', 'src/Tesst/jni/'] }
+    }
+
+    productFlavors {
+        web {}
+        baidu {}
+        c360 {}
+        qq {}
+        oppo {}
+        vivo {}
+        huawei {}
+        mi {}
+        meizu {}
+        lenovo {}
+        leshi {}
+        sogou {}
+        wandoujia {}
+        samsung {}
+    }
+
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [CHANNEL_VALUE: name, JPUSH_CHANNEL: name,UMENG_CHANNEL_VALUE: name]
+    }
+
+    //自定义APK名称,多渠道打包
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            variant.productFlavors.each { flavor ->
+                def project = "cat"
+                def separator = "_"
+                def buildType = variant.variantData.variantConfiguration.buildType.name
+                def versionName = variant.versionName
+                def versionCode = variant.versionCode
+                def date = new Date()
+                def formattedDate = date.format('yyyyMMdd')
+                //测试版本名
+                def apkName = project + separator + "v" + versionName + separator + versionCode + separator + buildType + separator + flavor.name + ".apk"
+                if (buildType == "release") {//发布版本名
+                    apkName = project + separator + "v" + versionName + separator + versionCode + separator + buildType + separator + flavor.name + separator + formattedDate + ".apk"
+                }
+                output.outputFileName = apkName
+            }
         }
     }
 
 
 
-
-    sourceSets { main { jni.srcDirs = ['src/main/jni', 'src/main/jni/'] } }
 }
 
-apply plugin: 'replugin-host-gradle'
+    apply plugin: 'replugin-host-gradle'
 
 
-dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation files('libs/poponLogger_1.0.0.jar')
-    compile 'com.github.open-android:BaseRecyclerAndAdapter:0.5.13'
-
-    //net
-    compile 'com.zhy:okhttputils:2.6.2'
-    implementation 'com.yanzhenjie.nohttp:nohttp:1.1.9'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
-    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
-    compile 'com.squareup.retrofit2:converter-scalars:2.0.0-beta4'
-    compile 'com.squareup.okhttp3:okhttp:3.2.0'
-
-    //ui
-    compile 'com.akexorcist:RoundCornerProgressBar:2.0.3'
-    compile 'com.mylhyl:circleDialog:2.4.0'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.rengwuxian.materialedittext:library:2.1.4'
-    compile 'com.github.clans:fab:1.6.4'
-    compile 'com.dinuscxj:circleprogressbar:1.1.1'
-    compile 'com.github.open-android:SystemBarTint:v1.0.0'
-    compile 'com.huxq17.handygridview:handygridview:1.1.0'
-    // Rx
-    compile 'io.reactivex:rxandroid:1.1.0'
-    compile 'io.reactivex:rxjava:1.1.5'
-    //bus
-    compile 'org.greenrobot:eventbus:3.1.1'
-    //Annotation
-    compile 'com.google.dagger:dagger:2.0.2'
-
-    compile 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
-
-    compile 'com.facebook.conceal:conceal:1.1.3@aar'
-
-    provided 'org.glassfish:javax.annotation:10.0-b28'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.0.2'
-
-    compile 'com.qihoo360.replugin:replugin-host-lib:2.2.4'
-    compile project(path: ':lib.encrypt')
-}
+    dependencies {
+        implementation fileTree(include: ['*.jar'], dir: 'libs')
+        implementation 'com.android.support:appcompat-v7:26.1.0'
+        implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+        testImplementation 'junit:junit:4.12'
+        androidTestImplementation 'com.android.support.test:runner:1.0.1'
+        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+        implementation files('libs/poponLogger_1.0.0.jar')
+        compile 'com.github.open-android:BaseRecyclerAndAdapter:0.5.13'
+        //net
+        compile 'com.zhy:okhttputils:2.6.2'
+        implementation 'com.yanzhenjie.nohttp:nohttp:1.1.9'
+        compile 'com.squareup.retrofit2:retrofit:2.1.0'
+        compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
+        compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+        compile 'com.squareup.retrofit2:converter-scalars:2.0.0-beta4'
+        compile 'com.squareup.okhttp3:okhttp:3.2.0'
+        //ui
+        compile 'com.akexorcist:RoundCornerProgressBar:2.0.3'
+        compile 'com.mylhyl:circleDialog:2.4.0'
+        compile 'com.github.bumptech.glide:glide:3.7.0'
+        compile 'com.rengwuxian.materialedittext:library:2.1.4'
+        compile 'com.github.clans:fab:1.6.4'
+        compile 'com.dinuscxj:circleprogressbar:1.1.1'
+        compile 'com.github.open-android:SystemBarTint:v1.0.0'
+        compile 'com.huxq17.handygridview:handygridview:1.1.0'
+        // Rx
+        compile 'io.reactivex:rxandroid:1.1.0'
+        compile 'io.reactivex:rxjava:1.1.5'
+        //bus
+        compile 'org.greenrobot:eventbus:3.1.1'
+        //Annotation
+        compile 'com.google.dagger:dagger:2.0.2'
+        implementation 'pub.devrel:easypermissions:1.2.0'
+        compile 'com.jakewharton:butterknife:8.4.0'
+        annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+        compile 'com.facebook.conceal:conceal:1.1.3@aar'
+        provided 'org.glassfish:javax.annotation:10.0-b28'
+        annotationProcessor 'com.google.dagger:dagger-compiler:2.0.2'
+        compile 'com.qihoo360.replugin:replugin-host-lib:2.2.4'
+        implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        compile project(path: ':lib.encrypt')
+    }

@@ -30,6 +30,7 @@ import android.widget.Toast;
 import com.example.mac.back.R;
 import com.example.mac.back.application.MyApplication;
 import com.example.mac.back.bean.Product;
+import com.example.mac.back.bean.UserBank;
 import com.example.mac.back.config.AppConfig;
 import com.example.mac.back.data.ClientThread;
 import com.example.mac.back.data.ProductApi;
@@ -38,8 +39,11 @@ import com.example.mac.back.service.PushService;
 import com.example.mac.back.ui.adapter.MyFragmentAdapter;
 import com.example.mac.back.base.BaseActivity;
 import com.example.mac.back.ui.contract.UpdateContract;
+import com.example.mac.back.ui.contract.UserDetailContract;
 import com.example.mac.back.ui.fragment.Fragment_home;
 import com.example.mac.back.ui.presenter.UpdatePresenter;
+import com.example.mac.back.ui.presenter.UserBankPresenter;
+import com.example.mac.back.ui.presenter.UserPresenter;
 import com.example.mac.back.utils.ApkUtils;
 import com.example.mac.back.utils.SharedPreferencesUtils;
 import com.example.mac.back.utils.StatusBarUtils;
@@ -83,6 +87,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     private List<Fragment> list = new ArrayList<Fragment>();
     private List<String> lists=new ArrayList<>();
     private ScrollOrNotViewPager vp;
+
 
 
      UpdatePresenter mPresenter;
@@ -481,16 +486,14 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     }
 
 
-
-
-
-
-
+    /**
+     * 初始化推送
+     */
     @Override
     protected void initSocketService() {
         super.initSocketService();
-        Intent intent = new Intent(this,PushService.class);
-        startService(intent);
+//        Intent intent = new Intent(this,PushService.class);
+//        startService(intent);
     }
 
 
@@ -598,6 +601,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         vp.setScroll(canDrag);
     }
     private OnChangeModeListener listener;
+
 
     public interface OnChangeModeListener{
         void changeMode(MotionEvent ev);
