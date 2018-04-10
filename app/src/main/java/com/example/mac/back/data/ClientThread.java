@@ -6,20 +6,24 @@ import android.os.Message;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.ref.WeakReference;
 import java.net.Socket;
 
 /**
  * Created by mac on 2018/3/21.
  */
 
-public class ClientThread implements Runnable{
-    private Socket s;  //该线程负责处理的Socket
+public class ClientThread extends Thread{
+
     private Handler handler;
     //该线程所处理的Socket对应的输入流
     BufferedReader br = null;
 
+    private WeakReference<Socket> mWeakSocket;
+
+
     public ClientThread(Socket s, Handler handler) throws IOException {
-        this.s = s;
+        mWeakSocket = new WeakReference<Socket>(s);
         this.handler = handler;
         br = new BufferedReader(new InputStreamReader(s.getInputStream()));
     }
@@ -42,4 +46,10 @@ public class ClientThread implements Runnable{
         }
 
     }
+
+
+
+
+
+
 }

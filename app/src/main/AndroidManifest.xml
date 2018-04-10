@@ -47,7 +47,11 @@
             >
 
 
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
 
 
 
@@ -62,6 +66,8 @@
 
 
 
+
+
             </activity>
         <activity android:name=".ui.activity.BrowserActivity">
 
@@ -69,10 +75,21 @@
 
 
         </activity>
+
+
+
         <activity android:name=".ui.activity.PasswordinputActivity"></activity>
 
 
         <service android:name=".service.PushService"></service>
+
+        <service android:name=".service.SocketService"
+            android:process=":socketpush"
+
+            ></service>
+
+        <service android:name=".service.CancelService"></service>
+
         <activity android:name=".ui.activity.ProductDetailActivity">
 
             <!--<intent-filter>-->
