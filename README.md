@@ -138,6 +138,10 @@ update14.android
 - 使用插件化开发将 ndk增量更新 从业务中脱离出来成为单独的apk
 - 并使用360Plugin 将apk作为资源并动态加载
 
+update15.android
+- 集成多渠道打包
+- 使用jenkins简单打造持续集成编译环境
+
 
 Discussing
 ----------
