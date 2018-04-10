@@ -142,6 +142,9 @@ update15.android
 - 集成多渠道打包
 - 使用jenkins简单打造持续集成编译环境
 
+update16.android
+- 在socket基础上增加进程优先级保活并使用心跳包维护socket连接增加推送到达率
+
 
 Discussing
 ----------
