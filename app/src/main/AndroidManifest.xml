@@ -25,6 +25,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.MainActivity">
 
+
         </activity>
 
 
@@ -67,7 +68,6 @@
 
 
 
-
             </activity>
         <activity android:name=".ui.activity.BrowserActivity">
 
@@ -76,6 +76,8 @@
 
         </activity>
 
+
+        <activity android:name=".ui.activity.UserTicketActivity"></activity>
 
 
         <activity android:name=".ui.activity.PasswordinputActivity"></activity>

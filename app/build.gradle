@@ -94,6 +94,10 @@ android {
 
 
 
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
     apply plugin: 'replugin-host-gradle'
@@ -132,6 +136,8 @@ android {
         compile 'org.greenrobot:eventbus:3.1.1'
         //Annotation
         compile 'com.google.dagger:dagger:2.0.2'
+        debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+        releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
         implementation 'pub.devrel:easypermissions:1.2.0'
         compile 'com.jakewharton:butterknife:8.4.0'
         annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'

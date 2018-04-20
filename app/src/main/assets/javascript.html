@@ -6,13 +6,21 @@
 </head>
 <body>
     <button type="button" id="button1" onclick="callAndroid()">点击调用Android代码</button>
+    <button type="button" id="button2" onclick="setToken()">点击调用Android代码</button>
     <script type="text/javascript" src="../../static/js/jquery.js"></script>
     <script type="text/javascript" src="../../static/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="../../static/js/base64_decode.js"></script>
-    <script>
+    <script type="text/javascript">
+    var token = "";
         function callAndroid(){
             index.register("js调用了android中的hello方法");
          }
+
+     function setToken(){
+		return "xxxx";
+	 }
+
+
     </script>
 </body>
 </html>

@@ -46,6 +46,12 @@
             android:textSize="15sp" />
 
 
+        <Button
+            android:text="xxx"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_test"/>
 
 
 
@@ -70,6 +76,7 @@
 
 
     </WebView>
+
 
 
 

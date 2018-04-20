@@ -7,15 +7,19 @@ import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.AsyncTask;
 import android.os.HandlerThread;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.ViewManager;
 import android.view.WindowManager;
 
+import com.example.mac.back.data.Handler;
 import com.example.mac.back.ui.activity.MainActivity;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
+
+import kotlin.jvm.Synchronized;
 
 /**
  * Created by mac on 2018/4/9.
@@ -39,7 +43,7 @@ Executors executors;
         ThreadPoolExecutor tp1= (ThreadPoolExecutor) Executors.newFixedThreadPool(5);//创建固定大小的线程池
         ThreadPoolExecutor tp2= (ThreadPoolExecutor)Executors.newCachedThreadPool();//新任务会创建新线程处理 空闲久的线程会销毁 可变大小先吃
         ThreadPoolExecutor tp3= (ThreadPoolExecutor)Executors.newSingleThreadExecutor(); //单个线程处理单个任务
-
+        ThreadPoolExecutor tp4= (ThreadPoolExecutor)Executors.newScheduledThreadPool(3); //单个线程处理单个任务
 
         new AsyncTask<Void,Void,Void>(){
 
@@ -48,7 +52,6 @@ Executors executors;
                 //只有这个方法在子线程执行
                 return null;
             }
-
 
             @Override
             protected void onPostExecute(Void aVoid) {
@@ -77,7 +80,12 @@ Executors executors;
 //        Context context;
 //        context.startService(intentService);
 
-
+        android.os.Handler handler=new android.os.Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+            }
+        };
 
 
 

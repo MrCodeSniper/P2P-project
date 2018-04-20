@@ -269,7 +269,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     @Override
     public void showUpdateDialog(String message) {
 
-        com.orhanobut.logger.Logger.e("显示dialog"+"未增加内容");
+
 
 //        CustomDialogBuilder.getInstance(MainActivity.this)
 //                .setMessage("测试")

@@ -17,6 +17,8 @@ import com.qihoo360.replugin.RePlugin;
 import com.qihoo360.replugin.RePluginApplication;
 import com.qihoo360.replugin.RePluginConfig;
 import com.qihoo360.replugin.RePluginEventCallbacks;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 
 /**
  * Created by mac on 2018/3/2.
@@ -27,6 +29,7 @@ public class MyApplication extends RePluginApplication {
     //dagger component组件
     private AppComponent mAppComponent;
     private static MyApplication sInstance;
+    public static RefWatcher refWatcher;
 
     @Override
     protected void attachBaseContext(Context base) {
@@ -39,6 +42,11 @@ public class MyApplication extends RePluginApplication {
         super.onCreate();
 //        CrashHandler crashHandler = CrashHandler.getInstance();
 //        crashHandler.init(getApplicationContext());
+
+//        if (LeakCanary.isInAnalyzerProcess(this)) {
+//            return;
+//        }
+//        refWatcher=LeakCanary.install(this);
         ItheimaHttp.init(this, AppConfig.BASEURL);
 
         sInstance=this;
@@ -54,7 +62,10 @@ public class MyApplication extends RePluginApplication {
 //                .build();
 //        OkHttpUtils.initClient(okHttpClient);
 
+
+
         SharedPreferencesUtils.init(this);
+
     }
 
     //让其他类直接关联application

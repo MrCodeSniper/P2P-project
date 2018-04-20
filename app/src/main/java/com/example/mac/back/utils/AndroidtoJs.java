@@ -18,34 +18,21 @@ import com.orhanobut.logger.Logger;
 public class AndroidtoJs extends Object {
 
     private Activity mcontext;
-    private WebView view;
 
 
-    public AndroidtoJs(Activity mcontext, WebView view) {
+    public AndroidtoJs(Activity mcontext) {
         this.mcontext = mcontext;
-        this.view=view;
     }
+
 
     // 定义JS需要调用的方法
     // 被JS调用的方法必须加入@JavascriptInterface注解
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @JavascriptInterface
-    public void register(String msg) {
-        if (SharedPreferencesUtils.getBoolean("cat", "logined", false)) {
+    public boolean register() {
+            Logger.e("xxx");
 
-            //请求url成功后返回
-
-            view.post(new Runnable() {
-                @Override
-                public void run() {
-                    view.loadUrl("javascript:setToken(" + "'hello world'" + ")");
-                }
-            });
-
-
-
-        }else {
             IntentUtils.showIntent(mcontext,LoginActivity.class);
-        }
+            return false;
     }
+
 }
