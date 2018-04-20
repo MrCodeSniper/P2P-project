@@ -145,6 +145,8 @@ update15.android
 update16.android
 - 在socket基础上增加进程优先级保活并使用心跳包维护socket连接增加推送到达率
 
+update17.android
+- 添加了优惠券模块 新注册会员能领取一次新手518抵用券和0.3%的加息券  持续时间为30天
 
 Discussing
 ----------
